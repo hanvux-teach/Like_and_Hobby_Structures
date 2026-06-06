@@ -291,12 +291,12 @@ var ORDER_DATA=[
   {topic:'hobby',words:['My','hobby','is','playing','football','.'],answer:'My hobby is playing football .'},
   {topic:'hobby',words:['Her','hobby','is','skipping','rope','.'],answer:'Her hobby is skipping rope .'},
   {topic:'hobby',words:['His','hobby','is','flying','kites','.'],answer:'His hobby is flying kites .'},
-  {topic:'hobby',words:['Tom’s','hobby','is','collecting','stickers','.'],answer:"Tom's hobby is collecting stickers ."},
-  {topic:'hobby',words:['Lily’s','hobby','is','drawing','pictures','.'],answer:"Lily's hobby is drawing pictures ."},
+  {topic:'hobby',words:['Tom's','hobby','is','collecting','stickers','.'],answer:"Tom's hobby is collecting stickers ."},
+  {topic:'hobby',words:['Lily's','hobby','is','drawing','pictures','.'],answer:"Lily's hobby is drawing pictures ."},
   {topic:'hobby',words:['Their','hobbies','are','singing','and','dancing','.'],answer:['Their hobbies are singing and dancing .','Their hobbies are dancing and singing .']},
   {topic:'hobby',words:['Our','hobbies','are','playing','tag','and','reading','comics','.'],answer:['Our hobbies are playing tag and reading comics .','Our hobbies are reading comics and playing tag .']},
   {topic:'hobby',words:['The','twins’','hobbies','are','cycling','and','swimming','.'],answer:['The twins’ hobbies are cycling and swimming .','The twins’ hobbies are swimming and cycling .']},
-  {topic:'hobby',words:['Jack’s','hobby','is','playing','badminton','.'],answer:"Jack's hobby is playing badminton ."},
+  {topic:'hobby',words:['Jack's','hobby','is','playing','badminton','.'],answer:"Jack's hobby is playing badminton ."},
   {topic:'hobby',words:['My','friends’','hobbies','are','playing','marbles','and','playing','hide-and-seek','.'],answer:['My friends’ hobbies are playing marbles and playing hide-and-seek .','My friends’ hobbies are playing hide-and-seek and playing marbles .']},
 ];
 
@@ -614,13 +614,21 @@ function renderOrder(q){
     if(answered||!orderSelected.length)return;
     var built = orderSelected.map(function(o){
         return o.word;
-    }).join(' ');
+    }).join(' ')
+     .replace(/[‘’]/g,"'")
+     .trim();
 
     answered = true;
 
-    var ok = Array.isArray(q.answer)
-        ? q.answer.includes(built)
-        : built === q.answer;
+    var answers = Array.isArray(q.answer)
+      ? q.answer
+      : [q.answer];
+    
+    answers = answers.map(function(a){
+      return a.replace(/[‘’]/g,"'").trim();
+    });
+    
+    var ok = answers.includes(built);
     afterAnswer(ok,q.answer,q.topic==='like'?'Cấu trúc: S + like(s) + V-ing':'Cấu trúc: S\'s hobby/hobbies + is/are + V-ing',q.words.join(' '));
   });
 }
