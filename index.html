@@ -650,8 +650,8 @@ function renderMatch(q){
   var rightItems=shuffle(q.pairs.slice());
   var gc=document.getElementById('game-content');
   gc.innerHTML=topicTag(q.topic)
-    +'<div class="q-card"><p style="font-size:13px;color:var(--color-text-secondary)">Nối chủ ngữ (trái) với vị ngữ đúng (phải):</p></div>'
-    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px"><div class="match-col-lbl">Chủ ngữ</div><div class="match-col-lbl">Vị ngữ</div></div>'
+    +'<div class="q-card"><p style="font-size:13px;color:var(--color-text-secondary)">Nối cụm bên trái với cụm bên phải cho đúng:</p></div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px"><div class="match-col-lbl">Trái</div><div class="match-col-lbl">Phải</div></div>'
     +'<div id="match-area"></div>'
     +'<div class="match-connect" id="match-status">Bấm một ô bên trái, rồi ô tương ứng bên phải.</div>';
 
