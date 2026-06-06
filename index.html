@@ -1,127 +1,148 @@
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --teal:#0F6E56;--teal-mid:#1D9E75;--teal-pale:#E1F5EE;--teal-border:#5DCAA5;
-  --coral-pale:#FAECE7;--coral-text:#712B13;
-  --green-pale:#EAF3DE;--green-text:#27500A;--green-border:#3B6D11;
-  --red-pale:#FCEBEB;--red-text:#791F1F;--red-border:#A32D2D;
-  --amber-bg:#FAEEDA;--amber-text:#854F0B;
-}
-body{font-family:'Nunito',sans-serif;background:var(--color-background-tertiary);color:var(--color-text-primary);min-height:100vh}
-.wrap{max-width:440px;margin:0 auto;padding:18px 14px 40px}
-.screen{display:none}.screen.active{display:block}
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --teal:#0F6E56;--teal-mid:#1D9E75;--teal-pale:#E1F5EE;--teal-border:#5DCAA5;
+    --coral-pale:#FAECE7;--coral-text:#712B13;
+    --green-pale:#EAF3DE;--green-text:#27500A;--green-border:#3B6D11;
+    --red-pale:#FCEBEB;--red-text:#791F1F;--red-border:#A32D2D;
+    --amber-bg:#FAEEDA;--amber-text:#854F0B;
+    --purple-pale:#F0EBFA;--purple-text:#5B2D8E;--purple-border:#9B59B6;
+    --blue-pale:#EBF4FA;--blue-text:#1A5276;--blue-border:#2980B9;
+    --orange-pale:#FEF0E3;--orange-text:#784212;--orange-border:#E67E22;
+    --pink-pale:#FDEBF5;--pink-text:#7D2060;--pink-border:#C0399A;
+  }
+  body{font-family:'Nunito',sans-serif;background:var(--color-background-tertiary,#f3f4f6);color:var(--color-text-primary,#111);min-height:100vh}
+  .wrap{max-width:440px;margin:0 auto;padding:18px 14px 40px}
+  .screen{display:none}.screen.active{display:block}
 
-.logo{text-align:center;margin-bottom:20px}
-.logo-icon{font-size:46px;display:block;margin-bottom:6px}
-.logo h1{font-size:23px;font-weight:800;color:var(--teal);font-family:'Nunito',sans-serif}
-.logo p{font-size:13px;color:var(--color-text-secondary);margin-top:4px}
+  .logo{text-align:center;margin-bottom:20px}
+  .logo-icon{font-size:46px;display:block;margin-bottom:6px}
+  .logo h1{font-size:23px;font-weight:800;color:var(--teal);font-family:'Nunito',sans-serif}
+  .logo p{font-size:13px;color:var(--color-text-secondary,#555);margin-top:4px}
 
-.ref-box{background:var(--color-background-primary);border-radius:16px;padding:14px 16px;margin-bottom:18px;border:0.5px solid var(--color-border-tertiary)}
-.ref-box h3{font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
-.ref-row{display:flex;gap:10px}
-.ref-card{flex:1;background:var(--teal-pale);border-radius:10px;padding:10px 12px}
-.ref-card.b{background:var(--coral-pale)}
-.ref-lbl{font-size:11px;font-weight:700;color:#085041;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
-.ref-card.b .ref-lbl{color:var(--coral-text)}
-.ref-rule{font-size:13px;color:var(--color-text-primary);line-height:1.5;margin-bottom:4px}
-.ref-eg{font-size:12px;color:var(--color-text-secondary);font-style:italic}
+  .ref-box{background:var(--color-background-primary,#fff);border-radius:16px;padding:14px 16px;margin-bottom:14px;border:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+  .ref-box h3{font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+  .ref-row{display:flex;gap:10px}
+  .ref-card{flex:1;background:var(--teal-pale);border-radius:10px;padding:10px 12px}
+  .ref-card.b{background:var(--coral-pale)}
+  .ref-lbl{font-size:11px;font-weight:700;color:#085041;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
+  .ref-card.b .ref-lbl{color:var(--coral-text)}
+  .ref-rule{font-size:13px;color:var(--color-text-primary,#111);line-height:1.5;margin-bottom:4px}
+  .ref-eg{font-size:12px;color:var(--color-text-secondary,#555);font-style:italic}
 
-.mode-section h2{font-size:12px;font-weight:700;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
-.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
-.mode-card{background:var(--color-background-primary);border-radius:14px;padding:14px 12px;cursor:pointer;border:2px solid var(--color-border-tertiary);transition:.15s;text-align:center}
-.mode-card:hover{border-color:var(--teal-mid)}
-.mode-card.selected{border-color:var(--teal-mid);background:var(--teal-pale)}
-.mc-icon{font-size:22px;margin-bottom:5px}
-.mc-title{font-size:13px;font-weight:700;color:var(--color-text-primary)}
-.mc-desc{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
-.btn-start{display:block;width:100%;background:var(--teal-mid);color:#fff;border:none;border-radius:14px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif}
-.btn-start:hover{background:var(--teal)}
+  .analysis-box{background:var(--color-background-primary,#fff);border-radius:14px;padding:14px 16px;margin-bottom:14px;border:0.5px solid var(--color-border-tertiary,#e0e0e0);font-size:13.5px;line-height:1.75}
+  .analysis-box .an-section{margin-bottom:10px}
+  .analysis-box .an-section:last-child{margin-bottom:0}
+  .analysis-box .an-title{font-weight:700;font-size:13px;margin-bottom:3px}
+  .analysis-box .an-ok{color:var(--teal);font-size:13px}
+  .an-chip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:20px;padding:3px 10px;margin:2px 3px 2px 0}
+  .an-chip-red{background:var(--red-pale);color:var(--red-border);border:1px solid var(--red-border)}
 
-.hud{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.hud-bar-wrap{flex:1}
-.hud-lbl{font-size:11px;font-weight:700;color:var(--color-text-secondary);margin-bottom:3px}
-.hud-bar{height:7px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden}
-.hud-fill{height:100%;background:var(--teal-mid);border-radius:4px;transition:.35s}
-.hud-score{background:var(--color-background-primary);border-radius:10px;padding:5px 13px;font-size:14px;font-weight:700;color:var(--teal);border:0.5px solid var(--color-border-tertiary);white-space:nowrap}
-.hud-streak{background:var(--amber-bg);border-radius:10px;padding:5px 11px;font-size:13px;font-weight:700;color:var(--amber-text);display:none;white-space:nowrap}
+  .mode-section h2{font-size:12px;font-weight:700;color:var(--color-text-secondary,#555);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+  .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+  .mode-card{background:var(--color-background-primary,#fff);border-radius:14px;padding:14px 12px;cursor:pointer;border:2px solid var(--color-border-tertiary,#e0e0e0);transition:.15s;text-align:center}
+  .mode-card:hover{border-color:var(--teal-mid)}
+  .mode-card.selected{border-color:var(--teal-mid);background:var(--teal-pale)}
+  .mc-icon{font-size:22px;margin-bottom:5px}
+  .mc-title{font-size:13px;font-weight:700;color:var(--color-text-primary,#111)}
+  .mc-desc{font-size:11px;color:var(--color-text-secondary,#555);margin-top:2px}
+  .btn-start{display:block;width:100%;background:var(--teal-mid);color:#fff;border:none;border-radius:14px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif}
+  .btn-start:hover{background:var(--teal)}
 
-.topic-tag{display:inline-block;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.4px}
-.tag-like{background:var(--teal-pale);color:#085041}
-.tag-hobby{background:var(--coral-pale);color:var(--coral-text)}
+  .hud{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .hud-bar-wrap{flex:1}
+  .hud-lbl{font-size:11px;font-weight:700;color:var(--color-text-secondary,#555);margin-bottom:3px}
+  .hud-bar{height:7px;background:var(--color-background-secondary,#eee);border-radius:4px;overflow:hidden}
+  .hud-fill{height:100%;background:var(--teal-mid);border-radius:4px;transition:.35s}
+  .hud-score{background:var(--color-background-primary,#fff);border-radius:10px;padding:5px 13px;font-size:14px;font-weight:700;color:var(--teal);border:0.5px solid var(--color-border-tertiary,#e0e0e0);white-space:nowrap}
+  .hud-streak{background:var(--amber-bg);border-radius:10px;padding:5px 11px;font-size:13px;font-weight:700;color:var(--amber-text);display:none;white-space:nowrap}
 
-.q-card{background:var(--color-background-primary);border-radius:16px;padding:17px 19px;margin-bottom:12px;border:0.5px solid var(--color-border-tertiary)}
-.q-text{font-size:18px;font-weight:700;color:var(--color-text-primary);line-height:1.5}
-.q-blank{color:var(--teal-mid);border-bottom:3px solid var(--teal-mid);padding-bottom:1px}
+  /* topic tag + form tag side by side */
+  .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .topic-tag{display:inline-block;font-size:11px;font-weight:700;padding:4px 11px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px}
+  .tag-like{background:var(--teal-pale);color:#085041}
+  .tag-hobby{background:var(--coral-pale);color:var(--coral-text)}
+  .tag-possessive{background:var(--purple-pale);color:var(--purple-text)}
+  .form-tag{display:inline-block;font-size:11px;font-weight:700;padding:4px 11px;border-radius:20px;letter-spacing:.4px}
+  .ftag-kd{background:var(--blue-pale);color:var(--blue-text)}       /* khẳng định */
+  .ftag-pd{background:var(--red-pale);color:var(--red-border)}        /* phủ định */
+  .ftag-nv{background:var(--orange-pale);color:var(--orange-text)}    /* nghi vấn */
+  .ftag-tl{background:var(--pink-pale);color:var(--pink-text)}        /* trả lời */
+  .ftag-ving{background:var(--green-pale);color:var(--green-border)}  /* v-ing */
+  .ftag-sh{background:var(--purple-pale);color:var(--purple-text)}    /* sở hữu */
 
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
-.choice-btn{background:var(--color-background-primary);border:2px solid var(--color-border-secondary);border-radius:12px;padding:12px;font-size:14px;font-weight:600;color:var(--color-text-primary);cursor:pointer;text-align:center;transition:.12s;font-family:'Nunito',sans-serif;line-height:1.3}
-.choice-btn:hover:not(:disabled){border-color:var(--teal-mid);background:var(--teal-pale);color:#085041}
-.choice-btn.correct{background:var(--green-pale)!important;border-color:var(--green-border)!important;color:var(--green-text)!important}
-.choice-btn.wrong{background:var(--red-pale)!important;border-color:var(--red-border)!important;color:var(--red-text)!important}
+  .q-card{background:var(--color-background-primary,#fff);border-radius:16px;padding:17px 19px;margin-bottom:12px;border:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+  .q-text{font-size:18px;font-weight:700;color:var(--color-text-primary,#111);line-height:1.5}
+  .q-blank{color:var(--teal-mid);border-bottom:3px solid var(--teal-mid);padding-bottom:1px}
 
-.fill-hint{background:var(--teal-pale);border-radius:10px;padding:9px 13px;margin-bottom:10px;font-size:13px;color:#085041}
-.fill-hint strong{font-weight:700}
-.fill-row{display:flex;gap:8px;margin-bottom:10px}
-.fill-input{flex:1;border:2px solid var(--color-border-secondary);border-radius:12px;padding:11px 14px;font-size:15px;font-weight:600;color:var(--color-text-primary);background:var(--color-background-primary);transition:.13s;font-family:'Nunito',sans-serif}
-.fill-input:focus{outline:none;border-color:var(--teal-mid)}
-.fill-input.correct{border-color:var(--green-border);background:var(--green-pale)}
-.fill-input.wrong{border-color:var(--red-border);background:var(--red-pale)}
-.btn-check{background:var(--teal-mid);color:#fff;border:none;border-radius:12px;padding:11px 18px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Nunito',sans-serif}
+  .choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+  .choice-btn{background:var(--color-background-primary,#fff);border:2px solid var(--color-border-secondary,#ccc);border-radius:12px;padding:12px;font-size:14px;font-weight:600;color:var(--color-text-primary,#111);cursor:pointer;text-align:center;transition:.12s;font-family:'Nunito',sans-serif;line-height:1.3}
+  .choice-btn:hover:not(:disabled){border-color:var(--teal-mid);background:var(--teal-pale);color:#085041}
+  .choice-btn.correct{background:var(--green-pale)!important;border-color:var(--green-border)!important;color:var(--green-text)!important}
+  .choice-btn.wrong{background:var(--red-pale)!important;border-color:var(--red-border)!important;color:var(--red-text)!important}
 
-.sentence-lbl{font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
-.bank-lbl{font-size:12px;font-weight:700;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
-.sentence-area{min-height:50px;border:2px dashed var(--teal-border);border-radius:12px;padding:8px 10px;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;background:var(--teal-pale)}
-.word-bank{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
-.word-chip{background:var(--teal-pale);color:#085041;border:2px solid var(--teal-border);border-radius:20px;padding:7px 15px;font-size:14px;font-weight:700;cursor:pointer;transition:.12s;user-select:none;font-family:'Nunito',sans-serif}
-.word-chip:hover{background:var(--teal-mid);color:#fff;border-color:var(--teal-mid)}
-.word-chip.used{opacity:.28;pointer-events:none}
-.word-chip.placed{background:var(--teal-mid);color:#fff;border-color:var(--teal)}
-.btn-clear{background:none;border:1.5px solid var(--color-border-secondary);border-radius:10px;padding:5px 12px;font-size:13px;font-weight:700;color:var(--color-text-secondary);cursor:pointer;margin-bottom:10px;font-family:'Nunito',sans-serif}
-.btn-clear:hover{border-color:var(--teal-mid);color:var(--teal)}
-.btn-confirm{display:block;width:100%;background:var(--teal-mid);color:#fff;border:none;border-radius:12px;padding:12px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:10px;font-family:'Nunito',sans-serif}
-.btn-confirm:hover{background:var(--teal)}
+  .fill-hint{background:var(--teal-pale);border-radius:10px;padding:9px 13px;margin-bottom:10px;font-size:13px;color:#085041}
+  .fill-hint strong{font-weight:700}
+  .fill-row{display:flex;gap:8px;margin-bottom:10px}
+  .fill-input{flex:1;border:2px solid var(--color-border-secondary,#ccc);border-radius:12px;padding:11px 14px;font-size:15px;font-weight:600;color:var(--color-text-primary,#111);background:var(--color-background-primary,#fff);transition:.13s;font-family:'Nunito',sans-serif}
+  .fill-input:focus{outline:none;border-color:var(--teal-mid)}
+  .fill-input.correct{border-color:var(--green-border);background:var(--green-pale)}
+  .fill-input.wrong{border-color:var(--red-border);background:var(--red-pale)}
+  .btn-check{background:var(--teal-mid);color:#fff;border:none;border-radius:12px;padding:11px 18px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Nunito',sans-serif}
 
-.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
-.match-col-lbl{font-size:11px;font-weight:700;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px;text-align:center}
-.match-item{background:var(--color-background-primary);border:2px solid var(--color-border-secondary);border-radius:12px;padding:11px 12px;font-size:13px;font-weight:700;color:var(--color-text-primary);cursor:pointer;text-align:center;transition:.13s;font-family:'Nunito',sans-serif;min-height:48px;display:flex;align-items:center;justify-content:center}
-.match-item:hover:not(.used-m):not([disabled]){border-color:var(--teal-mid);background:var(--teal-pale);color:#085041}
-.match-item.selected-m{border-color:var(--teal-mid);background:var(--teal-pale);color:#085041}
-.match-item.correct{background:var(--green-pale)!important;border-color:var(--green-border)!important;color:var(--green-text)!important;pointer-events:none}
-.match-item.wrong-flash{background:var(--red-pale)!important;border-color:var(--red-border)!important;color:var(--red-text)!important}
-.match-item.used-m{opacity:.32;pointer-events:none}
-.match-connect{font-size:12px;color:var(--color-text-secondary);text-align:center;margin-bottom:8px}
+  .sentence-lbl{font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+  .bank-lbl{font-size:12px;font-weight:700;color:var(--color-text-secondary,#555);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+  .sentence-area{min-height:50px;border:2px dashed var(--teal-border);border-radius:12px;padding:8px 10px;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;background:var(--teal-pale)}
+  .word-bank{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+  .word-chip{background:var(--teal-pale);color:#085041;border:2px solid var(--teal-border);border-radius:20px;padding:7px 15px;font-size:14px;font-weight:700;cursor:pointer;transition:.12s;user-select:none;font-family:'Nunito',sans-serif}
+  .word-chip:hover{background:var(--teal-mid);color:#fff;border-color:var(--teal-mid)}
+  .word-chip.used{opacity:.28;pointer-events:none}
+  .word-chip.placed{background:var(--teal-mid);color:#fff;border-color:var(--teal)}
+  .btn-clear{background:none;border:1.5px solid var(--color-border-secondary,#ccc);border-radius:10px;padding:5px 12px;font-size:13px;font-weight:700;color:var(--color-text-secondary,#555);cursor:pointer;margin-bottom:10px;font-family:'Nunito',sans-serif}
+  .btn-clear:hover{border-color:var(--teal-mid);color:var(--teal)}
+  .btn-confirm{display:block;width:100%;background:var(--teal-mid);color:#fff;border:none;border-radius:12px;padding:12px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:10px;font-family:'Nunito',sans-serif}
+  .btn-confirm:hover{background:var(--teal)}
 
-.feedback{border-radius:12px;padding:13px 15px;margin-bottom:10px;font-size:14px;line-height:1.6;display:none}
-.feedback.show{display:block}
-.feedback.ok{background:var(--green-pale);border:1.5px solid var(--green-border);color:var(--green-text)}
-.feedback.err{background:var(--red-pale);border:1.5px solid var(--red-border);color:var(--red-text)}
-.fb-title{font-weight:700;font-size:15px;margin-bottom:4px}
-.btn-next{display:none;width:100%;background:var(--teal-pale);color:var(--teal);border:2px solid var(--teal-border);border-radius:12px;padding:11px;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px;font-family:'Nunito',sans-serif}
-.btn-next:hover{background:var(--teal-mid);color:#fff}
+  .match-col-lbl{font-size:11px;font-weight:700;color:var(--color-text-secondary,#555);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px;text-align:center}
+  .match-item{background:var(--color-background-primary,#fff);border:2px solid var(--color-border-secondary,#ccc);border-radius:12px;padding:11px 12px;font-size:13px;font-weight:700;color:var(--color-text-primary,#111);cursor:pointer;text-align:center;transition:.13s;font-family:'Nunito',sans-serif;min-height:48px;display:flex;align-items:center;justify-content:center}
+  .match-item:hover:not(.used-m):not([disabled]){border-color:var(--teal-mid);background:var(--teal-pale);color:#085041}
+  .match-item.selected-m{border-color:var(--teal-mid);background:var(--teal-pale);color:#085041}
+  .match-item.correct{background:var(--green-pale)!important;border-color:var(--green-border)!important;color:var(--green-text)!important;pointer-events:none}
+  .match-item.wrong-flash{background:var(--red-pale)!important;border-color:var(--red-border)!important;color:var(--red-text)!important}
+  .match-item.used-m{opacity:.32;pointer-events:none}
+  .match-connect{font-size:12px;color:var(--color-text-secondary,#555);text-align:center;margin-bottom:8px}
 
-.result-hero{text-align:center;padding:1.8rem 0 1.3rem}
-.result-circle{width:100px;height:100px;border-radius:50%;background:var(--teal-mid);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px}
-.result-circle .big{font-size:28px;font-weight:800;color:#fff}
-.result-circle .small{font-size:11px;color:rgba(255,255,255,.85);font-weight:700}
-.result-msg{font-size:20px;font-weight:800;color:var(--color-text-primary);margin-bottom:5px}
-.result-sub{font-size:13px;color:var(--color-text-secondary);margin-bottom:20px}
-.stat-row{display:flex;gap:8px;margin-bottom:20px}
-.stat-card{flex:1;background:var(--color-background-primary);border-radius:12px;padding:12px;text-align:center;border:0.5px solid var(--color-border-tertiary)}
-.stat-card .sv{font-size:22px;font-weight:800}
-.stat-card .sl{font-size:11px;color:var(--color-text-secondary);margin-top:2px;font-weight:700}
-.review-wrap{background:var(--color-background-primary);border-radius:16px;padding:14px;border:0.5px solid var(--color-border-tertiary);margin-bottom:18px}
-.review-wrap h3{font-size:12px;font-weight:700;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
-.review-item{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
-.ri-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px}
-.ri-ok{background:var(--green-pale);color:var(--green-border)}
-.ri-err{background:var(--red-pale);color:var(--red-border)}
-.ri-text{flex:1;font-size:13px;line-height:1.5}
-.ri-text .rq{font-weight:700;color:var(--color-text-primary)}
-.ri-text .ra{color:var(--color-text-secondary)}
-.btn-row{display:flex;gap:8px}
-.btn-sec{flex:1;background:var(--color-background-primary);color:var(--color-text-primary);border:2px solid var(--color-border-secondary);border-radius:14px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif}
-.btn-sec:hover{border-color:var(--teal-mid);color:var(--teal)}
+  .feedback{border-radius:12px;padding:13px 15px;margin-bottom:10px;font-size:14px;line-height:1.6;display:none}
+  .feedback.show{display:block}
+  .feedback.ok{background:var(--green-pale);border:1.5px solid var(--green-border);color:var(--green-text)}
+  .feedback.err{background:var(--red-pale);border:1.5px solid var(--red-border);color:var(--red-text)}
+  .fb-title{font-weight:700;font-size:15px;margin-bottom:4px}
+  .btn-next{display:none;width:100%;background:var(--teal-pale);color:var(--teal);border:2px solid var(--teal-border);border-radius:12px;padding:11px;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px;font-family:'Nunito',sans-serif}
+  .btn-next:hover{background:var(--teal-mid);color:#fff}
+
+  .result-hero{text-align:center;padding:1.8rem 0 1.3rem}
+  .result-circle{width:100px;height:100px;border-radius:50%;background:var(--teal-mid);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px}
+  .result-circle .big{font-size:28px;font-weight:800;color:#fff}
+  .result-circle .small{font-size:11px;color:rgba(255,255,255,.85);font-weight:700}
+  .result-msg{font-size:20px;font-weight:800;color:var(--color-text-primary,#111);margin-bottom:5px}
+  .result-sub{font-size:13px;color:var(--color-text-secondary,#555);margin-bottom:20px}
+  .stat-row{display:flex;gap:8px;margin-bottom:20px}
+  .stat-card{flex:1;background:var(--color-background-primary,#fff);border-radius:12px;padding:12px;text-align:center;border:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+  .stat-card .sv{font-size:22px;font-weight:800}
+  .stat-card .sl{font-size:11px;color:var(--color-text-secondary,#555);margin-top:2px;font-weight:700}
+  .review-wrap{background:var(--color-background-primary,#fff);border-radius:16px;padding:14px;border:0.5px solid var(--color-border-tertiary,#e0e0e0);margin-bottom:18px}
+  .review-wrap h3{font-size:12px;font-weight:700;color:var(--color-text-secondary,#555);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+  .review-item{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+  .ri-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px}
+  .ri-ok{background:var(--green-pale);color:var(--green-border)}
+  .ri-err{background:var(--red-pale);color:var(--red-border)}
+  .ri-text{flex:1;font-size:13px;line-height:1.5}
+  .ri-text .rq{font-weight:700;color:var(--color-text-primary,#111)}
+  .ri-text .ra{color:var(--color-text-secondary,#555)}
+  .btn-row{display:flex;gap:8px}
+  .btn-sec{flex:1;background:var(--color-background-primary,#fff);color:var(--color-text-primary,#111);border:2px solid var(--color-border-secondary,#ccc);border-radius:14px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif}
+  .btn-sec:hover{border-color:var(--teal-mid);color:var(--teal)}
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -130,7 +151,6 @@ body{font-family:'Nunito',sans-serif;background:var(--color-background-tertiary)
 
 <div id="screen-menu" class="screen active">
   <div class="logo">
-    <span class="logo-icon">🎯</span>
     <h1>Hobby & Like Quiz</h1>
     <p>Ôn tập: Like + V-ing &amp; Hobby / Hobbies</p>
   </div>
@@ -149,6 +169,7 @@ body{font-family:'Nunito',sans-serif;background:var(--color-background-tertiary)
       </div>
     </div>
   </div>
+  <div class="analysis-box" id="analysis-box"></div>
   <div class="mode-section">
     <h2>Chọn dạng bài</h2>
     <div class="mode-grid">
@@ -199,294 +220,296 @@ body{font-family:'Nunito',sans-serif;background:var(--color-background-tertiary)
 </div>
 
 <script>
+// ── FORM constants ────────────────────────────────────────────────────────────
+// kd = khẳng định, pd = phủ định, nv = nghi vấn, tl = trả lời ngắn, ving = chia V-ing, sh = sở hữu
+var FORM_KEYS = ['kd','pd','nv','tl'];
+var FORM_LABEL = {
+  kd:'Câu khẳng định',
+  pd:'Câu phủ định',
+  nv:'Câu nghi vấn',
+  tl:'Trả lời ngắn'
+};
+var FORM_TAG_CLS = {kd:'ftag-kd',pd:'ftag-pd',nv:'ftag-nv',tl:'ftag-tl',ving:'ftag-ving',sh:'ftag-sh'};
+var FORM_TAG_LABEL = {kd:'✅ Khẳng định',pd:'❌ Phủ định',nv:'❓ Nghi vấn',tl:'💬 Trả lời ngắn',ving:'🔄 Chia V-ing',sh:'🔑 Sở hữu cách'};
+
+// ── PERSISTENT STATE ──────────────────────────────────────────────────────────
+var bestStreak = parseInt(localStorage.getItem('bestStreak') || '0');
+
+var modeStats = JSON.parse(
+  localStorage.getItem('modeStats') ||
+  '{"mcq":{"correct":0,"total":0},"fill":{"correct":0,"total":0},"order":{"correct":0,"total":0},"match":{"correct":0,"total":0}}'
+);
+['mcq','fill','order','match'].forEach(function(m){
+  if(modeStats[m] && modeStats[m].sum !== undefined) modeStats[m]={correct:0,total:0};
+  if(!modeStats[m]) modeStats[m]={correct:0,total:0};
+});
+
+var topicStats = JSON.parse(
+  localStorage.getItem('topicStats') ||
+  '{"like":{"correct":0,"total":0},"hobby":{"correct":0,"total":0},"possessive":{"correct":0,"total":0}}'
+);
+['like','hobby','possessive'].forEach(function(t){
+  if(topicStats[t] && topicStats[t].sum !== undefined) topicStats[t]={correct:0,total:0};
+  if(!topicStats[t]) topicStats[t]={correct:0,total:0};
+});
+
+var formStats = JSON.parse(
+  localStorage.getItem('formStats') ||
+  '{"kd":{"correct":0,"total":0},"pd":{"correct":0,"total":0},"nv":{"correct":0,"total":0},"tl":{"correct":0,"total":0}}'
+);
+FORM_KEYS.forEach(function(f){
+  if(!formStats[f]) formStats[f]={correct:0,total:0};
+});
+
+// ── DATA ──────────────────────────────────────────────────────────────────────
+// Each item has: topic, form, q, answer, choices (mcq) / hint (fill) / words (order), explain
 var MCQ_DATA=[
-  {topic:'like',q:'He _____ reading books every evening.',answer:'likes',choices:['like','likes','liking',"doesn't likes"],explain:'He (ngôi 3 số ít) → <b>likes</b> + V-ing'},
-  {topic:'like',q:'My friends _____ playing soccer after school.',answer:'like',choices:['likes','like',"doesn't like",'liking'],explain:'My friends (số nhiều) → <b>like</b> + V-ing'},
-  {topic:'like',q:'Lan _____ like drawing pictures — she prefers painting.',answer:"doesn't",choices:["don't","doesn't","do","isn't"],explain:'Phủ định ngôi 3 số ít → <b>doesn\'t</b> like'},
-  {topic:'like',q:'They _____ like listening to classical music.',answer:"don't",choices:["don't","doesn't","isn't","aren't"],explain:'Phủ định số nhiều → <b>don\'t</b> like'},
-  {topic:'like',q:'Does Tom _____ playing football on weekends?',answer:'like',choices:['likes','liking','like','liked'],explain:'Sau Does → động từ nguyên mẫu <b>like</b>'},
-  {topic:'like',q:'Do your teachers _____ drawing on the board?',answer:'like',choices:['likes','like','liking','liked'],explain:'Sau Do → động từ nguyên mẫu <b>like</b>'},
-  {topic:'like',q:'She likes _____ comics before bedtime.',answer:'reading',choices:['read','reads','reading','to reading'],explain:'likes + <b>reading</b> (V-ing)'},
-  {topic:'like',q:'I like _____ to music when I study.',answer:'listening',choices:['listen','listens','listening','listened'],explain:'like + <b>listening</b> (V-ing)'},
-  {topic:'like',q:'My father _____ playing badminton on Sundays.',answer:'likes',choices:['like',"don't like",'likes','liking'],explain:'My father (ngôi 3 số ít) → <b>likes</b>'},
-  {topic:'like',q:'_____ your friends like swimming in the sea?',answer:'Do',choices:['Does','Is','Do','Has'],explain:'your friends (số nhiều) → <b>Do</b>'},
-  {topic:'like',q:'_____ she like reading science books?',answer:'Does',choices:['Do','Does','Are','Have'],explain:'she (ngôi 3 số ít) → <b>Does</b>'},
-  {topic:'like',q:'My brother doesn\'t like _____ TV — he prefers reading.',answer:'watching',choices:['watch','watches','watching','watched'],explain:'like + <b>watching</b> (V-ing)'},
-  {topic:'hobby',q:"Mai's hobby _____ collecting stamps from different countries.",answer:'is',choices:['is','are','am','be'],explain:'hobby (số ít) → <b>is</b>'},
-  {topic:'hobby',q:'My hobbies are _____ comics and playing chess.',answer:'reading',choices:['read','reads','reading','to read'],explain:'are + <b>reading</b> (V-ing)'},
-  {topic:'hobby',q:"_____ hobby is riding a bike to school. (của anh ấy)",answer:'His',choices:['Her','Their','His','Our'],explain:'Của anh ấy → <b>His</b>'},
-  {topic:'hobby',q:"The children's hobbies _____ swimming and drawing cartoons.",answer:'are',choices:['is','are','am','be'],explain:'hobbies (số nhiều) → <b>are</b>'},
-  {topic:'hobby',q:"My uncle's hobby is _____ birds in the forest.",answer:'watching',choices:['watch','watching','watches','watched'],explain:'is + <b>watching</b> (V-ing)'},
-  {topic:'hobby',q:"_____ hobbies are cooking and gardening. (của họ)",answer:'Their',choices:['Their','His','Her','Our'],explain:'Của họ → <b>Their</b>'},
-  {topic:'hobby',q:"Our hobby _____ learning English together every day.",answer:'is',choices:['is','are','am','be'],explain:'hobby (số ít) → <b>is</b>'},
-  {topic:'hobby',q:"Jenny's hobby _____ taking photos of flowers.",answer:'is',choices:['is','are','am','be'],explain:'hobby (số ít) → <b>is</b>'},
-  {topic:'hobby',q:"Their hobbies are _____ TV shows and listening to podcasts.",answer:'watching',choices:['watch','watching','watches','watched'],explain:'are + <b>watching</b> (V-ing)'},
-  {topic:'hobby',q:"Peter's hobbies are drawing cartoons and _____.",answer:'swimming',choices:['swim','swimming','swims','swam'],explain:'are + <b>swimming</b> (V-ing)'},
-  {topic:'hobby',q:"_____ hobby is collecting stamps.",answer:"Tom's",choices:["Tom","Tom's","Toms","Toms'"],explain:"Tom + 's → <b>Tom's hobby</b>"},
-  {topic:'hobby',q:"_____ hobby is drawing cartoons.",answer:"Mai's",choices:["Mai","Mai's","Mais","Mais'"],explain:"Mai + 's → <b>Mai's hobby</b>"},
-  {topic:'hobby',q:"The _____ hobby is collecting shells.",answer:"girl's",choices:["girl","girl's","girls","girls'"],explain:"Danh từ số ít → thêm <b>'s</b>"},
-  {topic:'hobby',q:"The _____ hobbies are swimming and cycling.",answer:"boys'",choices:["boys","boy","boys'","boys's"],explain:"Danh từ số nhiều tận cùng bằng s → thêm <b>'</b>"},
-  {topic:'hobby',q:"The _____ hobby is collecting toy cars.",answer:"child's",choices:["child","child's","childs","childs'"],explain:"child + 's → <b>child's</b>"},
-  {topic:'hobby',q:"The _____ hobbies are reading and drawing.",answer:"children's",choices:["children","children's","childrens","childrens'"],explain:"children là số nhiều bất quy tắc → thêm <b>'s</b>"},
-  {topic:'hobby',q:"_____ hobby is taking photos of birds.",answer:"Peter's",choices:["Peter","Peter's","Peters","Peters'"],explain:"Peter + 's → <b>Peter's hobby</b>"},
-  {topic:'hobby',q:"The _____ hobby is making model planes.",answer:"teacher's",choices:["teacher","teacher's","teachers","teachers'"],explain:"Danh từ số ít → thêm <b>'s</b>"}
+  {topic:'like',form:'kd',q:'He _____ reading books every evening.',answer:'likes',choices:['like','likes','liking',"doesn't likes"],explain:'He (ngôi 3 số ít) → <b>likes</b> + V-ing'},
+  {topic:'like',form:'kd',q:'My friends _____ playing soccer after school.',answer:'like',choices:['likes','like',"doesn't like",'liking'],explain:'My friends (số nhiều) → <b>like</b> + V-ing'},
+  {topic:'like',form:'pd',q:'Lan _____ like drawing pictures — she prefers painting.',answer:"doesn't",choices:["don't","doesn't","do","isn't"],explain:"Phủ định ngôi 3 số ít → <b>doesn't</b> like"},
+  {topic:'like',form:'pd',q:'They _____ like listening to classical music.',answer:"don't",choices:["don't","doesn't","isn't","aren't"],explain:"Phủ định số nhiều → <b>don't</b> like"},
+  {topic:'like',form:'nv',q:'Does Tom _____ playing football on weekends?',answer:'like',choices:['likes','liking','like','liked'],explain:'Sau Does → động từ nguyên mẫu <b>like</b>'},
+  {topic:'like',form:'nv',q:'Do your teachers _____ drawing on the board?',answer:'like',choices:['likes','like','liking','liked'],explain:'Sau Do → động từ nguyên mẫu <b>like</b>'},
+  {topic:'like',form:'ving',q:'She likes _____ comics before bedtime.',answer:'reading',choices:['read','reads','reading','to reading'],explain:'likes + <b>reading</b> (V-ing)'},
+  {topic:'like',form:'ving',q:'I like _____ to music when I study.',answer:'listening',choices:['listen','listens','listening','listened'],explain:'like + <b>listening</b> (V-ing)'},
+  {topic:'like',form:'kd',q:'My father _____ playing badminton on Sundays.',answer:'likes',choices:['like',"don't like",'likes','liking'],explain:'My father (ngôi 3 số ít) → <b>likes</b>'},
+  {topic:'like',form:'nv',q:'_____ your friends like swimming in the sea?',answer:'Do',choices:['Does','Is','Do','Has'],explain:'your friends (số nhiều) → <b>Do</b>'},
+  {topic:'like',form:'nv',q:'_____ she like reading science books?',answer:'Does',choices:['Do','Does','Are','Have'],explain:'she (ngôi 3 số ít) → <b>Does</b>'},
+  {topic:'like',form:'ving',q:"My brother doesn't like _____ TV — he prefers reading.",answer:'watching',choices:['watch','watches','watching','watched'],explain:'like + <b>watching</b> (V-ing)'},
+  {topic:'hobby',form:'kd',q:"Mai's hobby _____ collecting stamps from different countries.",answer:'is',choices:['is','are','am','be'],explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'hobby',form:'ving',q:'My hobbies are _____ comics and playing chess.',answer:'reading',choices:['read','reads','reading','to read'],explain:'are + <b>reading</b> (V-ing)'},
+  {topic:'possessive',form:'sh',q:"_____ hobby is riding a bike to school. (của anh ấy)",answer:'His',choices:['Her','Their','His','Our'],explain:'Của anh ấy → <b>His</b>'},
+  {topic:'hobby',form:'kd',q:"The children's hobbies _____ swimming and drawing cartoons.",answer:'are',choices:['is','are','am','be'],explain:'hobbies (số nhiều) → <b>are</b>'},
+  {topic:'hobby',form:'ving',q:"My uncle's hobby is _____ birds in the forest.",answer:'watching',choices:['watch','watching','watches','watched'],explain:'is + <b>watching</b> (V-ing)'},
+  {topic:'possessive',form:'sh',q:"_____ hobbies are cooking and gardening. (của họ)",answer:'Their',choices:['Their','His','Her','Our'],explain:'Của họ → <b>Their</b>'},
+  {topic:'hobby',form:'kd',q:"Our hobby _____ learning English together every day.",answer:'is',choices:['is','are','am','be'],explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'hobby',form:'kd',q:"Jenny's hobby _____ taking photos of flowers.",answer:'is',choices:['is','are','am','be'],explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'hobby',form:'ving',q:"Their hobbies are _____ TV shows and listening to podcasts.",answer:'watching',choices:['watch','watching','watches','watched'],explain:'are + <b>watching</b> (V-ing)'},
+  {topic:'hobby',form:'ving',q:"Peter's hobbies are drawing cartoons and _____.",answer:'swimming',choices:['swim','swimming','swims','swam'],explain:'are + <b>swimming</b> (V-ing)'},
+  {topic:'possessive',form:'sh',q:"_____ hobby is collecting stamps.",answer:"Tom's",choices:["Tom","Tom's","Toms","Toms'"],explain:"Tom + 's → <b>Tom's hobby</b>"},
+  {topic:'possessive',form:'sh',q:"_____ hobby is drawing cartoons.",answer:"Mai's",choices:["Mai","Mai's","Mais","Mais'"],explain:"Mai + 's → <b>Mai's hobby</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobby is collecting shells.",answer:"girl's",choices:["girl","girl's","girls","girls'"],explain:"Danh từ số ít → thêm <b>'s</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobbies are swimming and cycling.",answer:"boys'",choices:["boys","boy","boys'","boys's"],explain:"Danh từ số nhiều tận cùng bằng s → thêm <b>'</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobby is collecting toy cars.",answer:"child's",choices:["child","child's","childs","childs'"],explain:"child + 's → <b>child's</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobbies are reading and drawing.",answer:"children's",choices:["children","children's","childrens","childrens'"],explain:"children là số nhiều bất quy tắc → thêm <b>'s</b>"},
+  {topic:'possessive',form:'sh',q:"_____ hobby is taking photos of birds.",answer:"Peter's",choices:["Peter","Peter's","Peters","Peters'"],explain:"Peter + 's → <b>Peter's hobby</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobby is making model planes.",answer:"teacher's",choices:["teacher","teacher's","teachers","teachers'"],explain:"Danh từ số ít → thêm <b>'s</b>"},
+  {topic:'like',form:'nv',q:'Do your cousins _____ playing chess after school?',answer:'like',choices:['likes','like','liking','liked'],explain:'Sau Do → động từ nguyên mẫu <b>like</b>'},
+  {topic:'hobby',form:'nv',q:'What _____ her hobby?',answer:'is',choices:['are','is','am','be'],explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'like',form:'nv',q:'Does Tom _____ collecting stamps?',answer:'like',choices:['likes','liking','like','liked'],explain:'Sau Does → động từ nguyên mẫu <b>like</b>'},
+  {topic:'hobby',form:'tl',q:'What is her hobby?',answer:'Her hobby is collecting stamps.',choices:['Her hobby is collecting stamps.','Her hobby collecting stamps.','She hobby is collecting stamps.','Her hobby are collecting stamps.'],explain:'What is her hobby? → <b>Her hobby is ...</b>'},
+  {topic:'hobby',form:'nv',q:'What _____ their hobbies?',answer:'are',choices:['is','are','am','be'],explain:'hobbies (số nhiều) → <b>are</b>'},
+  {topic:'hobby',form:'tl',q:'What are their hobbies?',answer:'Their hobbies are swimming and drawing.',choices:['Their hobbies are swimming and drawing.','Their hobbies is swimming and drawing.','They hobbies are swimming and drawing.','Their hobby are swimming and drawing.'],explain:'What are their hobbies? → <b>Their hobbies are ...</b>'},
+  {topic:'like',form:'tl',q:'Does she like reading books?',answer:'Yes, she does.',choices:['Yes, she does.','No, she does.','Yes, she is.',"No, she isn't."],explain:'Đảo <b>Does she</b> thành <b>she does</b> → <b>Yes, she does</b>'},
+  {topic:'hobby',form:'tl',q:'What is his hobby?',answer:'His hobby is playing football.',choices:['His hobby is playing football.','His hobby playing football.','He hobby is playing football.','His hobby are playing football.'],explain:'What is his hobby? → <b>His hobby is ...</b>'},
+  {topic:'like',form:'tl',q:'Do they like playing football?',answer:'Yes, they do.',choices:['Yes, they do.','No, they do.','Yes, they are.',"No, they aren't."],explain:'Đảo <b>Do they</b> thành <b>they do</b> → <b>Yes, they do</b>'},
+  {topic:'hobby',form:'tl',q:'What are your hobbies?',answer:'My hobbies are reading books and painting.',choices:['My hobbies are reading books and painting.','My hobbies is reading books and painting.','I hobbies are reading books and painting.','My hobby are reading books and painting.'],explain:'What are your hobbies? → <b>My hobbies are ...</b>'},
+  {topic:'like',form:'tl',q:"Do your friends like collecting stickers?",answer:"No, they don't.",choices:["Yes, they don't.","No, they don't.",'Yes, they are.','No, they are.'],explain:"Đảo <b>Do they</b> thành <b>they do</b> → <b>No, they don't</b>"},
+  {topic:'hobby',form:'nv',q:'What _____ his hobby?',answer:'is',choices:['are','is','am','be'],explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'like',form:'tl',q:"Does Tom like swimming?",answer:"No, he doesn't.",choices:["Yes, he doesn't.","No, he doesn't.",'Yes, he is.','No, he is.'],explain:"Đảo <b>Does he</b> thành <b>he does</b> → <b>No, he doesn't</b>"},
+  {topic:'hobby',form:'kd',q:"Anna's hobby _____ collecting postcards from different countries.",answer:'is',choices:['is','are','am','be'],explain:'hobby (số ít) → <b>is</b>'}
 ];
 
 var FILL_DATA=[
-  {topic:'like',q:'My sister likes _____ the guitar in her room.',answer:'playing',hint:'play',explain:'likes + <b>playing</b> (V-ing)'},
-  {topic:'like',q:'My brother _____ like eating vegetables at all.',answer:["doesn't","does not"],hint:"Dạng Phủ Định",explain:'Phủ định ngôi 3 số ít → <b>doesn\'t / does not</b>'},
-  {topic:'like',q:'_____ your sister like cooking Vietnamese food?',answer:'Does',hint:'Dạng Nghi Vấn',explain:'Ngôi 3 số ít → <b>Does</b>'},
-  {topic:'like',q:'We like _____ pictures of animals in the park.',answer:'drawing',hint:'draw',explain:'like + <b>drawing</b> (V-ing)'},
-  {topic:'like',q:'_____ your classmates like doing homework together?',answer:'Do',hint:'Dạng Nghi Vấn',explain:'your classmates (số nhiều) → <b>Do</b>'},
-  {topic:'like',q:'She likes _____ her friends at the weekend.',answer:'meeting',hint:'meet',explain:'likes + <b>meeting</b> (V-ing)'},
-  {topic:'like',q:'My cat _____ like being held — it always runs away.',answer:["doesn't","does not"],hint:"Dạng Phủ Định",explain:'Phủ định ngôi 3 số ít → <b>doesn\'t / does not</b>'},
-  {topic:'like',q:'I like _____ new recipes on weekends.',answer:'trying',hint:'try',explain:'like + <b>trying</b> (V-ing)'},
-  {topic:'hobby',q:"Tom's hobby _____ collecting football stickers.",answer:'is',hint:'Dạng Khẳng Định',explain:'hobby (số ít) → <b>is</b>'},
-  {topic:'hobby',q:"Their hobbies _____ watching films and playing chess.",answer:'are',hint:'Dạng Khẳng Định',explain:'hobbies (số nhiều) → <b>are</b>'},
-  {topic:'hobby',q:"My hobby is _____ short stories for my school magazine.",answer:'writing',hint:'write',explain:'is + <b>writing</b> (V-ing)'},
-  {topic:'hobby',q:"Peter's hobbies are drawing cartoons and _____ in the pool.",answer:'swimming',hint:'swim',explain:'are + <b>swimming</b> (V-ing)'},
-  {topic:'hobby',q:"_____ hobby is making model aeroplanes. (của tôi)",answer:'My',hint:'Tính Từ Sở Hữu',explain:'Của tôi → <b>My</b>'},
-  {topic:'hobby',q:"Our hobbies are reading, playing games, and _____ new dishes.",answer:'cooking',hint:'cook',explain:'are + <b>cooking</b> (V-ing)'},
-  {topic:'hobby',q:"Sarah's hobby _____ collecting shells from the beach.",answer:'is',hint:'Dạng Khẳng Định',explain:'hobby (số ít) → <b>is</b>'},
-  {topic:'like',q:'My parents like _____ TV together after dinner.',answer:'watching',hint:'watch',explain:'like + <b>watching</b> (V-ing)'},
-  {topic:'like',q:'_____ your brother like playing computer games?',answer:'Does',hint:'Dạng Nghi Vấn',explain:'Ngôi 3 số ít → <b>Does</b>'},
-  {topic:'like',q:'They _____ like getting up early on Sundays.',answer:["don't","do not"],hint:'Dạng Phủ Định',explain:'Phủ định số nhiều → <b>don\'t / do not</b>'},
-  {topic:'hobby',q:"His hobby _____ taking photos of animals.",answer:'is',hint:'Dạng Khẳng Định',explain:'hobby (số ít) → <b>is</b>'},
-  {topic:'hobby',q:"Their hobbies are singing, dancing, and _____ books.",answer:'reading',hint:'read',explain:'are + <b>reading</b> (V-ing)'},
-  {topic:'hobby',q:"_____ hobby is collecting stamps.",answer:"Tom's",hint:'Sở hữu cách của Tom',explain:"Tom + 's → <b>Tom's hobby</b>"},
-  {topic:'hobby',q:"_____ hobby is drawing cartoons.",answer:"Mai's",hint:'Sở hữu cách của Mai',explain:"Mai + 's → <b>Mai's hobby</b>"},
-  {topic:'hobby',q:"The _____ hobby is collecting shells.",answer:"girl's",hint:'Sở hữu cách của girl',explain:"Danh từ số ít → thêm <b>\'s</b>"},
-  {topic:'hobby',q:"The _____ hobby is making model planes.",answer:"teacher's",hint:'Sở hữu cách của teacher',explain:"teacher + 's → <b>teacher's</b>"},
-  {topic:'hobby',q:"The _____ hobby is collecting toy cars.",answer:"child's",hint:'Sở hữu cách của child',explain:"child + 's → <b>child's</b>"},
-  {topic:'hobby',q:"The _____ hobbies are swimming and cycling.",answer:"boys'",hint:'Sở hữu cách của boys',explain:"Danh từ số nhiều tận cùng bằng s → thêm <b>'</b>"},
-  {topic:'hobby',q:"The _____ hobbies are reading and drawing.",answer:"children's",hint:'Sở hữu cách của children',explain:"children là số nhiều bất quy tắc → thêm <b>\'s</b>"},
-  {topic:'hobby',q:"The _____ hobbies are playing chess and football.",answer:"students'",hint:'Sở hữu cách của students',explain:"students + ' → <b>students'</b>"},
-  {topic:'hobby',q:"_____ hobby is taking photos of birds.",answer:"Peter's",hint:'Sở hữu cách của Peter',explain:"Peter + 's → <b>Peter's hobby</b>"},
-  {topic:'hobby',q:"The _____ hobbies are gardening and cooking.",answer:"parents'",hint:'Sở hữu cách của parents',explain:"parents + ' → <b>parents'</b>"},
+  {topic:'like',form:'ving',q:'My sister likes _____ the guitar in her room.',answer:'playing',hint:'play',explain:'likes + <b>playing</b> (V-ing)'},
+  {topic:'like',form:'pd',q:'My brother _____ like eating vegetables at all.',answer:["doesn't","does not"],hint:"Dạng Phủ Định",explain:"Phủ định ngôi 3 số ít → <b>doesn't / does not</b>"},
+  {topic:'like',form:'nv',q:'_____ your sister like cooking Vietnamese food?',answer:'Does',hint:'Dạng Nghi Vấn',explain:'Ngôi 3 số ít → <b>Does</b>'},
+  {topic:'like',form:'ving',q:'We like _____ pictures of animals in the park.',answer:'drawing',hint:'draw',explain:'like + <b>drawing</b> (V-ing)'},
+  {topic:'like',form:'nv',q:'_____ your classmates like doing homework together?',answer:'Do',hint:'Dạng Nghi Vấn',explain:'your classmates (số nhiều) → <b>Do</b>'},
+  {topic:'like',form:'ving',q:'She likes _____ her friends at the weekend.',answer:'meeting',hint:'meet',explain:'likes + <b>meeting</b> (V-ing)'},
+  {topic:'like',form:'pd',q:"My cat _____ like being held — it always runs away.",answer:["doesn't","does not"],hint:"Dạng Phủ Định",explain:"Phủ định ngôi 3 số ít → <b>doesn't / does not</b>"},
+  {topic:'like',form:'ving',q:'I like _____ new recipes on weekends.',answer:'trying',hint:'try',explain:'like + <b>trying</b> (V-ing)'},
+  {topic:'hobby',form:'kd',q:"Tom's hobby _____ collecting football stickers.",answer:'is',hint:'Dạng Khẳng Định',explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'hobby',form:'kd',q:"Their hobbies _____ watching films and playing chess.",answer:'are',hint:'Dạng Khẳng Định',explain:'hobbies (số nhiều) → <b>are</b>'},
+  {topic:'hobby',form:'ving',q:"My hobby is _____ short stories for my school magazine.",answer:'writing',hint:'write',explain:'is + <b>writing</b> (V-ing)'},
+  {topic:'hobby',form:'ving',q:"Peter's hobbies are drawing cartoons and _____ in the pool.",answer:'swimming',hint:'swim',explain:'are + <b>swimming</b> (V-ing)'},
+  {topic:'possessive',form:'sh',q:"_____ hobby is making model aeroplanes. (của tôi)",answer:'My',hint:'Tính Từ Sở Hữu',explain:'Của tôi → <b>My</b>'},
+  {topic:'hobby',form:'ving',q:"Our hobbies are reading, playing games, and _____ new dishes.",answer:'cooking',hint:'cook',explain:'are + <b>cooking</b> (V-ing)'},
+  {topic:'hobby',form:'kd',q:"Sarah's hobby _____ collecting shells from the beach.",answer:'is',hint:'Dạng Khẳng Định',explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'like',form:'ving',q:'My parents like _____ TV together after dinner.',answer:'watching',hint:'watch',explain:'like + <b>watching</b> (V-ing)'},
+  {topic:'like',form:'nv',q:'_____ your brother like playing computer games?',answer:'Does',hint:'Dạng Nghi Vấn',explain:'Ngôi 3 số ít → <b>Does</b>'},
+  {topic:'like',form:'pd',q:"They _____ like getting up early on Sundays.",answer:["don't","do not"],hint:'Dạng Phủ Định',explain:"Phủ định số nhiều → <b>don't / do not</b>"},
+  {topic:'hobby',form:'kd',q:"His hobby _____ taking photos of animals.",answer:'is',hint:'Dạng Khẳng Định',explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'hobby',form:'ving',q:"Their hobbies are singing, dancing, and _____ books.",answer:'reading',hint:'read',explain:'are + <b>reading</b> (V-ing)'},
+  {topic:'possessive',form:'sh',q:"_____ hobby is collecting stamps.",answer:"Tom's",hint:'Sở hữu cách của Tom',explain:"Tom + 's → <b>Tom's hobby</b>"},
+  {topic:'possessive',form:'sh',q:"_____ hobby is drawing cartoons.",answer:"Mai's",hint:'Sở hữu cách của Mai',explain:"Mai + 's → <b>Mai's hobby</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobby is collecting shells.",answer:"girl's",hint:'Sở hữu cách của girl',explain:"Danh từ số ít → thêm <b>'s</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobby is making model planes.",answer:"teacher's",hint:'Sở hữu cách của teacher',explain:"teacher + 's → <b>teacher's</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobby is collecting toy cars.",answer:"child's",hint:'Sở hữu cách của child',explain:"child + 's → <b>child's</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobbies are swimming and cycling.",answer:"boys'",hint:'Sở hữu cách của boys',explain:"Danh từ số nhiều tận cùng bằng s → thêm <b>'</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobbies are reading and drawing.",answer:"children's",hint:'Sở hữu cách của children',explain:"children là số nhiều bất quy tắc → thêm <b>'s</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobbies are playing chess and football.",answer:"students'",hint:'Sở hữu cách của students',explain:"students + ' → <b>students'</b>"},
+  {topic:'possessive',form:'sh',q:"_____ hobby is taking photos of birds.",answer:"Peter's",hint:'Sở hữu cách của Peter',explain:"Peter + 's → <b>Peter's hobby</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobbies are gardening and cooking.",answer:"parents'",hint:'Sở hữu cách của parents',explain:"parents + ' → <b>parents'</b>"},
+  {topic:'like',form:'ving',q:'My sister likes _____ the piano after school.',answer:'playing',hint:'play',explain:'likes + <b>playing</b> (V-ing)'},
+  {topic:'hobby',form:'tl',q:'What is her _____?',answer:'hobby',hint:'What Hobby',explain:'What is her <b>hobby</b>?'},
+  {topic:'like',form:'pd',q:'My brother _____ like eating spicy food.',answer:["doesn't","does not"],hint:'Dạng Phủ Định',explain:"Phủ định ngôi 3 số ít → <b>doesn't / does not</b>"},
+  {topic:'hobby',form:'kd',q:"Tom's hobby _____ collecting football cards.",answer:'is',hint:'Dạng Khẳng Định',explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'like',form:'nv',q:'_____ your sister like cooking dinner?',answer:'Does',hint:'Dạng Nghi Vấn',explain:'Ngôi 3 số ít → <b>Does</b>'},
+  {topic:'hobby',form:'tl',q:'What are their _____?',answer:'hobbies',hint:'Sở thích',explain:'What are their <b>hobbies</b>?'},
+  {topic:'like',form:'ving',q:'We like _____ pictures of flowers.',answer:'drawing',hint:'draw',explain:'like + <b>drawing</b> (V-ing)'},
+  {topic:'possessive',form:'sh',q:"_____ hobby is making model robots. (của tôi)",answer:'My',hint:'Tính Từ Sở Hữu',explain:'Của tôi → <b>My</b>'},
+  {topic:'like',form:'nv',q:'_____ your classmates like studying together?',answer:'Do',hint:'Dạng Nghi Vấn',explain:'your classmates (số nhiều) → <b>Do</b>'},
+  {topic:'hobby',form:'kd',q:"Their hobbies _____ watching films and playing chess.",answer:'are',hint:'Dạng Khẳng Định',explain:'hobbies (số nhiều) → <b>are</b>'},
+  {topic:'like',form:'ving',q:'She likes _____ her grandparents every weekend.',answer:'visiting',hint:'visit',explain:'likes + <b>visiting</b> (V-ing)'},
+  {topic:'like',form:'tl',q:'Does she like reading books? → Yes, ____.',answer:'she does.',hint:'Trả Lời Ngắn',explain:'Đảo <b>Does she</b> thành <b>she does</b> → <b>Yes, she does</b>'},
+  {topic:'like',form:'pd',q:'My cat _____ like sleeping outside at night.',answer:["doesn't","does not"],hint:'Dạng Phủ Định',explain:"Phủ định ngôi 3 số ít → <b>doesn't / does not</b>"},
+  {topic:'hobby',form:'tl',q:'What is his _____?',answer:'hobby',hint:'Sở thích',explain:'What is his <b>hobby</b>?'},
+  {topic:'like',form:'ving',q:'I like _____ new recipes on weekends.',answer:'trying',hint:'try',explain:'like + <b>trying</b> (V-ing)'},
+  {topic:'hobby',form:'ving',q:"My hobby is _____ short stories.",answer:'writing',hint:'write',explain:'is + <b>writing</b> (V-ing)'},
+  {topic:'possessive',form:'sh',q:"The _____ hobby is collecting seashells.",answer:"girl's",hint:'Sở hữu cách của girl',explain:"Danh từ số ít → thêm <b>'s</b>"},
+  {topic:'like',form:'ving',q:'My parents like _____ TV together after dinner.',answer:'watching',hint:'watch',explain:'like + <b>watching</b> (V-ing)'},
+  {topic:'hobby',form:'tl',q:'What are your _____?',answer:'hobbies',hint:'Sở thích',explain:'What are your <b>hobbies</b>?'},
+  {topic:'like',form:'nv',q:'_____ your brother like playing computer games?',answer:'Does',hint:'Dạng Nghi Vấn',explain:'Ngôi 3 số ít → <b>Does</b>'},
+  {topic:'possessive',form:'sh',q:"The _____ hobbies are swimming and cycling.",answer:"boys'",hint:'Sở hữu cách của boys',explain:"Danh từ số nhiều tận cùng bằng s → thêm <b>'</b>"},
+  {topic:'like',form:'pd',q:"They _____ like getting up early on Sundays.",answer:["don't","do not"],hint:'Dạng Phủ Định',explain:"Phủ định số nhiều → <b>don't / do not</b>"},
+  {topic:'hobby',form:'ving',q:"Peter's hobbies are drawing cartoons and _____.",answer:'swimming',hint:'swim',explain:'are + <b>swimming</b> (V-ing)'},
+  {topic:'like',form:'tl',q:'Does she like playing football? → No, ____.',answer:"she doesn't",hint:'Trả Lời Ngắn',explain:"Đảo <b>Does she</b> thành <b>she does</b> → <b>No, she doesn't</b>"},
+  {topic:'possessive',form:'sh',q:"The _____ hobbies are reading and drawing.",answer:"children's",hint:'Sở hữu cách của children',explain:"children là số nhiều bất quy tắc → thêm <b>'s</b>"},
+  {topic:'hobby',form:'kd',q:"Sarah's hobby _____ collecting shells from the beach.",answer:'is',hint:'Dạng Khẳng Định',explain:'hobby (số ít) → <b>is</b>'},
+  {topic:'like',form:'tl',q:'Do your friends like swimming? → Yes, ____.',answer:'they do.',hint:'Trả Lời Ngắn',explain:'Thay <b>your friends</b> thành <b>they</b>, Đảo <b>Do they</b> thành <b>they do</b> → <b>Yes, they do.</b>'},
+  {topic:'hobby',form:'tl',q:"What are the students' _____?",answer:'hobbies',hint:'Sở thích',explain:"What are the students' <b>hobbies</b>?"},
+  {topic:'possessive',form:'sh',q:"_____ hobby is taking photos of birds.",answer:"Peter's",hint:'Sở hữu cách của Peter',explain:"Peter + 's → <b>Peter's hobby</b>"}
 ];
 
 var ORDER_DATA=[
-  {topic:'like',words:['She','likes','dancing','and','singing','after','school','.'],answer:['She likes dancing and singing after school .', 'She likes singing and dancing after school .']},
-  {topic:'like',words:['Do','they','like','playing','chess','at','the','club','?'],answer:'Do they like playing chess at the club ?'},
-  {topic:'like',words:['He','does','not','like','watching','films','.'],answer:'He does not like watching films .'},
-  {topic:'like',words:['Does','your','mother','like','cooking','?'],answer:'Does your mother like cooking ?'},
-  {topic:'like',words:['I','like','reading','books','every','night','.'],answer:'I like reading books every night .'},
-  {topic:'like',words:['My',"friends",'like','playing','football','on','Saturdays','.'],answer:'My friends like playing football on Saturdays .'},
-  {topic:'hobby',words:["Tom's",'hobby','is','collecting','stamps','.'],answer:"Tom's hobby is collecting stamps ."},
-  {topic:'hobby',words:['Their','hobbies','are','swimming','and','drawing','cartoons','.'],answer:['Their hobbies are swimming and drawing cartoons .', 'Their hobbies are drawing cartoons and swimming .']},
-  {topic:'hobby',words:['My','hobby','is','writing','short','stories','.'],answer:'My hobby is writing short stories .'},
-  {topic:'hobby',words:['Her','hobby','is','playing','the','piano','every','evening','.'],answer:'Her hobby is playing the piano every evening .'},
-  {topic:'hobby',words:['Our','hobbies','are','cooking','and','gardening','.'],answer:['Our hobbies are cooking and gardening .', 'Our hobbies are gardening and cooking .']},
-  {topic:'hobby',words:['His','hobby','is','taking','photos','.'],answer:'His hobby is taking photos .'},
-  {topic:'like',words:['I','like','playing','tag','at','school','.'],answer:'I like playing tag at school .'},
-  {topic:'like',words:['She','likes','playing','marbles','with','her','friends','.'],answer:'She likes playing marbles with her friends .'},
-  {topic:'like',words:['Do','you','like','flying','kites','?'],answer:'Do you like flying kites ?'},
-  {topic:'like',words:['They','like','playing','hide-and-seek','.'],answer:'They like playing hide-and-seek .'},
-  {topic:'like',words:['My','brother','likes','riding','his','bike','.'],answer:'My brother likes riding his bike .'},
-  {topic:'like',words:['Does','Anna','like','drawing','pictures','?'],answer:'Does Anna like drawing pictures ?'},
-  {topic:'like',words:['He','does','not','like','playing','chess','.'],answer:'He does not like playing chess .'},
-  {topic:'like',words:['We','like','reading','comic','books','.'],answer:'We like reading comic books .'},
-  {topic:'like',words:['The','children','like','singing','songs','.'],answer:'The children like singing songs .'},
-  {topic:'like',words:['My','friends','like','watching','cartoons','.'],answer:'My friends like watching cartoons .'},
-  {topic:'hobby',words:['My','hobby','is','playing','football','.'],answer:'My hobby is playing football .'},
-  {topic:'hobby',words:['Her','hobby','is','skipping','rope','.'],answer:'Her hobby is skipping rope .'},
-  {topic:'hobby',words:['His','hobby','is','flying','kites','.'],answer:'His hobby is flying kites .'},
-  {topic:'hobby',words:["Tom's",'hobby','is','collecting','stickers','.'],answer:"Tom's hobby is collecting stickers ."},
-  {topic:'hobby',words:["Lily's",'hobby','is','drawing','pictures','.'],answer:"Lily's hobby is drawing pictures ."},
-  {topic:'hobby',words:['Their','hobbies','are','singing','and','dancing','.'],answer:['Their hobbies are singing and dancing .','Their hobbies are dancing and singing .']},
-  {topic:'hobby',words:['Our','hobbies','are','playing','tag','and','reading','comics','.'],answer:['Our hobbies are playing tag and reading comics .','Our hobbies are reading comics and playing tag .']},
-  {topic:'hobby',words:["The","twins'","hobbies","are","cycling","and","swimming","."],answer:["The twins' hobbies are cycling and swimming .","The twins' hobbies are swimming and cycling ."]},  {topic:'hobby',words:["Jack's",'hobby','is','playing','badminton','.'],answer:"Jack's hobby is playing badminton ."},
-  {topic:'hobby',words:["My","friends'","hobbies","are","playing","marbles","and","playing","hide-and-seek","."],answer:["My friends' hobbies are playing marbles and playing hide-and-seek .","My friends' hobbies are playing hide-and-seek and playing marbles ."]},
+  {topic:'like',form:'kd',words:['She','likes','dancing','and','singing','after','school','.'],answer:['She likes dancing and singing after school .','She likes singing and dancing after school .']},
+  {topic:'like',form:'nv',words:['Do','they','like','playing','chess','at','the','club','?'],answer:'Do they like playing chess at the club ?'},
+  {topic:'like',form:'pd',words:['He','does','not','like','watching','films','.'],answer:'He does not like watching films .'},
+  {topic:'like',form:'nv',words:['Does','your','mother','like','cooking','?'],answer:'Does your mother like cooking ?'},
+  {topic:'like',form:'kd',words:['I','like','reading','books','every','night','.'],answer:'I like reading books every night .'},
+  {topic:'like',form:'kd',words:['My','friends','like','playing','football','on','Saturdays','.'],answer:'My friends like playing football on Saturdays .'},
+  {topic:'hobby',form:'kd',words:["Tom's",'hobby','is','collecting','stamps','.'],answer:"Tom's hobby is collecting stamps ."},
+  {topic:'hobby',form:'kd',words:['Their','hobbies','are','swimming','and','drawing','cartoons','.'],answer:['Their hobbies are swimming and drawing cartoons .','Their hobbies are drawing cartoons and swimming .']},
+  {topic:'hobby',form:'kd',words:['My','hobby','is','writing','short','stories','.'],answer:'My hobby is writing short stories .'},
+  {topic:'hobby',form:'kd',words:['Her','hobby','is','playing','the','piano','every','evening','.'],answer:'Her hobby is playing the piano every evening .'},
+  {topic:'hobby',form:'kd',words:['Our','hobbies','are','cooking','and','gardening','.'],answer:['Our hobbies are cooking and gardening .','Our hobbies are gardening and cooking .']},
+  {topic:'hobby',form:'kd',words:['His','hobby','is','taking','photos','.'],answer:'His hobby is taking photos .'},
+  {topic:'like',form:'kd',words:['I','like','playing','tag','at','school','.'],answer:'I like playing tag at school .'},
+  {topic:'like',form:'kd',words:['She','likes','playing','marbles','with','her','friends','.'],answer:'She likes playing marbles with her friends .'},
+  {topic:'like',form:'nv',words:['Do','you','like','flying','kites','?'],answer:'Do you like flying kites ?'},
+  {topic:'like',form:'kd',words:['They','like','playing','hide-and-seek','.'],answer:'They like playing hide-and-seek .'},
+  {topic:'like',form:'kd',words:['My','brother','likes','riding','his','bike','.'],answer:'My brother likes riding his bike .'},
+  {topic:'like',form:'nv',words:['Does','Anna','like','drawing','pictures','?'],answer:'Does Anna like drawing pictures ?'},
+  {topic:'like',form:'pd',words:['He','does','not','like','playing','chess','.'],answer:'He does not like playing chess .'},
+  {topic:'like',form:'kd',words:['We','like','reading','comic','books','.'],answer:'We like reading comic books .'},
+  {topic:'like',form:'kd',words:['The','children','like','singing','songs','.'],answer:'The children like singing songs .'},
+  {topic:'like',form:'kd',words:['My','friends','like','watching','cartoons','.'],answer:'My friends like watching cartoons .'},
+  {topic:'hobby',form:'kd',words:['My','hobby','is','playing','football','.'],answer:'My hobby is playing football .'},
+  {topic:'hobby',form:'kd',words:['Her','hobby','is','skipping','rope','.'],answer:'Her hobby is skipping rope .'},
+  {topic:'hobby',form:'kd',words:['His','hobby','is','flying','kites','.'],answer:'His hobby is flying kites .'},
+  {topic:'hobby',form:'kd',words:["Tom's",'hobby','is','collecting','stickers','.'],answer:"Tom's hobby is collecting stickers ."},
+  {topic:'hobby',form:'kd',words:["Lily's",'hobby','is','drawing','pictures','.'],answer:"Lily's hobby is drawing pictures ."},
+  {topic:'hobby',form:'kd',words:['Their','hobbies','are','singing','and','dancing','.'],answer:['Their hobbies are singing and dancing .','Their hobbies are dancing and singing .']},
+  {topic:'hobby',form:'kd',words:['Our','hobbies','are','playing','tag','and','reading','comics','.'],answer:['Our hobbies are playing tag and reading comics .','Our hobbies are reading comics and playing tag .']},
+  {topic:'hobby',form:'kd',words:["The","twins'","hobbies","are","cycling","and","swimming","."],answer:["The twins' hobbies are cycling and swimming .","The twins' hobbies are swimming and cycling ."]},
+  {topic:'hobby',form:'kd',words:["Jack's",'hobby','is','playing','badminton','.'],answer:"Jack's hobby is playing badminton ."},
+  {topic:'hobby',form:'kd',words:["My","friends'","hobbies","are","playing","marbles","and","playing","hide-and-seek","."],answer:["My friends' hobbies are playing marbles and playing hide-and-seek .","My friends' hobbies are playing hide-and-seek and playing marbles ."]},
+  {topic:'like',form:'kd',words:['She','likes','playing','badminton','with','her','friends','.'],answer:'She likes playing badminton with her friends .'},
+  {topic:'like',form:'nv',words:['Do','your','friends','like','watching','cartoons','?'],answer:'Do your friends like watching cartoons ?'},
+  {topic:'like',form:'pd',words:['He','does','not','like','getting','up','early','.'],answer:'He does not like getting up early .'},
+  {topic:'like',form:'nv',words:['Does','Tom','like','collecting','stamps','?'],answer:'Does Tom like collecting stamps ?'},
+  {topic:'like',form:'kd',words:['I','like','listening','to','music','after','school','.'],answer:'I like listening to music after school .'},
+  {topic:'like',form:'kd',words:['My','parents','like','gardening','at','weekends','.'],answer:'My parents like gardening at weekends .'},
+  {topic:'hobby',form:'kd',words:["Anna's",'hobby','is','collecting','postcards','.'],answer:"Anna's hobby is collecting postcards ."},
+  {topic:'hobby',form:'kd',words:['Their','hobbies','are','cycling','and','swimming','.'],answer:['Their hobbies are cycling and swimming .','Their hobbies are swimming and cycling .']},
+  {topic:'hobby',form:'kd',words:['My','hobby','is','making','paper','flowers','.'],answer:'My hobby is making paper flowers .'},
+  {topic:'hobby',form:'kd',words:['His','hobby','is','playing','chess','after','school','.'],answer:'His hobby is playing chess after school .'},
+  {topic:'hobby',form:'kd',words:['Our','hobbies','are','reading','and','drawing','.'],answer:['Our hobbies are reading and drawing .','Our hobbies are drawing and reading .']},
+  {topic:'hobby',form:'kd',words:["Jenny's",'hobby','is','taking','photos','of','birds','.'],answer:"Jenny's hobby is taking photos of birds ."},
+  {topic:'like',form:'kd',words:['We','like','playing','volleyball','in','the','park','.'],answer:'We like playing volleyball in the park .'},
+  {topic:'like',form:'kd',words:['She','likes','reading','comic','books','every','day','.'],answer:'She likes reading comic books every day .'},
+  {topic:'like',form:'nv',words:['Do','they','like','riding','bikes','?'],answer:'Do they like riding bikes ?'},
+  {topic:'like',form:'kd',words:['The','children','like','playing','tag','together','.'],answer:'The children like playing tag together .'},
+  {topic:'like',form:'kd',words:['My','sister','likes','drawing','pictures','of','animals','.'],answer:'My sister likes drawing pictures of animals .'},
+  {topic:'like',form:'nv',words:['Does','Mai','like','playing','the','piano','?'],answer:'Does Mai like playing the piano ?'},
+  {topic:'like',form:'pd',words:['She','does','not','like','watching','horror','films','.'],answer:'She does not like watching horror films .'},
+  {topic:'like',form:'kd',words:['They','like','flying','kites','on','windy','days','.'],answer:'They like flying kites on windy days .'},
+  {topic:'hobby',form:'kd',words:['My','hobby','is','collecting','coins','.'],answer:'My hobby is collecting coins .'},
+  {topic:'hobby',form:'kd',words:['Her','hobby','is','playing','the','guitar','.'],answer:'Her hobby is playing the guitar .'},
+  {topic:'hobby',form:'kd',words:['His','hobby','is','building','model','planes','.'],answer:'His hobby is building model planes .'},
+  {topic:'hobby',form:'kd',words:["Peter's",'hobby','is','fishing','with','his','father','.'],answer:"Peter's hobby is fishing with his father ."},
+  {topic:'hobby',form:'kd',words:["Linda's",'hobby','is','baking','cakes','.'],answer:"Linda's hobby is baking cakes ."},
+  {topic:'hobby',form:'kd',words:['Their','hobbies','are','singing','and','painting','.'],answer:['Their hobbies are singing and painting .','Their hobbies are painting and singing .']},
+  {topic:'hobby',form:'kd',words:['Our','hobbies','are','playing','chess','and','collecting','stickers','.'],answer:['Our hobbies are playing chess and collecting stickers .','Our hobbies are collecting stickers and playing chess .']},
+  {topic:'hobby',form:'kd',words:["The","students'","hobbies","are","reading","and","cycling","."],answer:["The students' hobbies are reading and cycling .","The students' hobbies are cycling and reading ."]},
+  {topic:'hobby',form:'kd',words:["Jack's",'hobby','is','playing','table','tennis','.'],answer:"Jack's hobby is playing table tennis ."},
+  {topic:'hobby',form:'kd',words:["My","friends'","hobbies","are","playing","football","and","swimming","."],answer:["My friends' hobbies are playing football and swimming .","My friends' hobbies are swimming and playing football ."]}
 ];
 
-// MATCH: mỗi câu gồm 4 chủ ngữ bên trái, 4 vị ngữ bên phải, nối đúng
 var MATCH_DATA=[
-  {
-    topic:'like',
-    pairs:[
-      {left:'She',right:'likes reading books.'},
-      {left:'They',right:"don't like playing volleyball."},
-      {left:'Does he',right:'like playing chess?'},
-      {left:'My cats',right:'like chasing butterflies.'},
-    ]
-  },
-  {
-    topic:'hobby',
-    pairs:[
-      {left:"Is Tom's hobby",right:'collecting stamps?'},
-      {left:"Their hobbies",right:'are swimming and drawing.'},
-      {left:"My hobby",right:'is writing stories.'},
-      {left:"Her",right:'hobbies are cooking and gardening.'},
-    ]
-  },
-  {
-    topic:'like',
-    pairs:[
-      {left:'We like',right:'dancing in the rain.'},
-      {left:'My brother',right:"doesn't like doing homework."},
-      {left:'Do they',right:'like watching films?'},
-      {left:'Lisa and Tom',right:"don't like singing folk songs."},
-    ]
-  },
-  {
-    topic:'hobby',
-    pairs:[
-      {left:"Is his hobby",right:'making model planes?'},
-      {left:"Are Mi's hobbies",right:'hiking and cycling?'},
-      {left:"Jenny's hobby",right:'is taking nature photos.'},
-      {left:"The boys' hobbies",right:'are gaming and fishing.'},
-    ]
-  },
-  {
-    topic:'like',
-    pairs:[
-      {left:'My parents',right:'like travelling abroad.'},
-      {left:'He',right:"doesn't like waking up early."},
-      {left:'Does she',right:'like learning new words?'},
-      {left:'Our teacher likes',right:'telling funny stories.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What's Tom's hobby?",right:"His hobby is collecting stamps."},
-      {left:'My parents',right:'like travelling abroad.'},
-      {left:'Does Jenny like fish?',right:"No, she doesn't."},
-      {left:"Their hobbies",right:'are swimming and cycling.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What are Ben's hobbies?",right:"His hobbies are swimming and drawing."},
-      {left:'Our teacher',right:'likes telling funny stories.'},
-      {left:'Do they like football?',right:'Yes, they do.'},
-      {left:"Mai's hobby",right:'is drawing cartoons.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What's Jenny's hobby?",right:"It is taking nature photos."},
-      {left:'My brother',right:"doesn't like spicy food."},
-      {left:'Do your friends like chess?',right:"No, they don't."},
-      {left:"The children's hobbies",right:'are reading and drawing.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What are Anna's hobbies?",right:"They are reading and cycling."},
-      {left:'She',right:'likes listening to music.'},
-      {left:'Does Tom like video games?',right:'Yes, he does.'},
-      {left:"Peter's hobby",right:'is taking photos of birds.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What's Sarah's hobby?",right:"She likes writing short stories."},
-      {left:'My uncle',right:'likes collecting coins.'},
-      {left:'Do they like camping?',right:'Yes, they do.'},
-      {left:"The boys' hobbies",right:'are fishing and cycling.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What are Lucy's hobbies?",right:"Her hobbies are swimming and drawing."},
-      {left:'My brother',right:"doesn't like waking up early."},
-      {left:'Does Tom like basketball?',right:'Yes, he does.'},
-      {left:"Anna's hobby",right:'is collecting postcards.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What's Ben's hobby?",right:"It is making model planes."},
-      {left:'My friends',right:'like playing board games.'},
-      {left:'Do your classmates like homework?',right:"No, they don't."},
-      {left:"Their hobbies",right:'are reading and painting.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What are Peter's hobbies?",right:"His hobbies are fishing and camping."},
-      {left:'She',right:'likes listening to music.'},
-      {left:'Does Jenny like spicy food?',right:"No, she doesn't."},
-      {left:"Tom's hobby",right:'is collecting stamps.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What's Mai's hobby?",right:"Her hobby is drawing cartoons."},
-      {left:'Our teacher',right:'likes telling funny stories.'},
-      {left:'Do they like swimming?',right:'Yes, they do.'},
-      {left:"The children's hobbies",right:'are reading and drawing.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What are Jack's hobbies?",right:"He likes cycling and running."},
-      {left:'My father',right:"doesn't like horror films."},
-      {left:'Does Anna like chess?',right:'Yes, she does.'},
-      {left:"Jenny's hobby",right:'is taking nature photos.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What's Peter's hobby?",right:"His hobby is taking photos of birds."},
-      {left:'The students',right:'like learning English.'},
-      {left:'Do your parents like travelling?',right:'Yes, they do.'},
-      {left:"Their hobbies",right:'are cooking and gardening.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What are the girls' hobbies?",right:"They like singing and dancing."},
-      {left:'My sister',right:'likes reading comic books.'},
-      {left:'Does Ben like fish?',right:"No, he doesn't."},
-      {left:"Sarah's hobby",right:'is collecting shells.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What's Tom's hobby?",right:"His hobby is collecting toy cars."},
-      {left:'We',right:'like watching cartoons.'},
-      {left:'Do they like badminton?',right:'Yes, they do.'},
-      {left:"The boys' hobbies",right:'are football and fishing.'},
-    ]
-  },
-  {
-    topic:'mixed',
-    pairs:[
-      {left:"What are Anna's hobbies?",right:"They are reading and cycling."},
-      {left:'My cousin',right:"doesn't like eating onions."},
-      {left:'Does Peter like football?',right:'Yes, he does.'},
-      {left:"Mai's hobby",right:'is collecting stickers.'},
-    ]
-  },
+  {topic:'like',pairs:[{left:'She',right:'likes reading books.'},{left:'They',right:"don't like playing volleyball."},{left:'Does he',right:'like playing chess?'},{left:'My cats',right:'like chasing butterflies.'}]},
+  {topic:'hobby',pairs:[{left:"Is Tom's hobby",right:'collecting stamps?'},{left:"Their hobbies",right:'are swimming and drawing.'},{left:"My hobby",right:'is writing stories.'},{left:"Her",right:'hobbies are cooking and gardening.'}]},
+  {topic:'like',pairs:[{left:'We like',right:'dancing in the rain.'},{left:'My brother',right:"doesn't like doing homework."},{left:'Do they',right:'like watching films?'},{left:'Lisa and Tom',right:"don't like singing folk songs."}]},
+  {topic:'hobby',pairs:[{left:"Is his hobby",right:'making model planes?'},{left:"Are Mi's hobbies",right:'hiking and cycling?'},{left:"Jenny's hobby",right:'is taking nature photos.'},{left:"The boys' hobbies",right:'are gaming and fishing.'}]},
+  {topic:'like',pairs:[{left:'My parents',right:'like travelling abroad.'},{left:'He',right:"doesn't like waking up early."},{left:'Does she',right:'like learning new words?'},{left:'Our teacher likes',right:'telling funny stories.'}]},
+  {topic:'like',pairs:[{left:"What's Tom's hobby?",right:"His hobby is collecting stamps."},{left:'My parents',right:'like travelling abroad.'},{left:'Does Jenny like fish?',right:"No, she doesn't."},{left:"Their hobbies",right:'are swimming and cycling.'}]},
+  {topic:'like',pairs:[{left:"What are Ben's hobbies?",right:"His hobbies are swimming and drawing."},{left:'Our teacher',right:'likes telling funny stories.'},{left:'Do they like football?',right:'Yes, they do.'},{left:"Mai's hobby",right:'is drawing cartoons.'}]},
+  {topic:'like',pairs:[{left:"What's Jenny's hobby?",right:"It is taking nature photos."},{left:'My brother',right:"doesn't like spicy food."},{left:"Do your friends like chess?",right:"No, they don't."},{left:"The children's hobbies",right:'are reading and drawing.'}]},
+  {topic:'like',pairs:[{left:"What are Anna's hobbies?",right:"They are reading and cycling."},{left:'She',right:'likes listening to music.'},{left:'Does Tom like video games?',right:'Yes, he does.'},{left:"Peter's hobby",right:'is taking photos of birds.'}]},
+  {topic:'like',pairs:[{left:"What's Sarah's hobby?",right:"She likes writing short stories."},{left:'My uncle',right:'likes collecting coins.'},{left:'Do they like camping?',right:'Yes, they do.'},{left:"The boys' hobbies",right:'are fishing and cycling.'}]}
 ];
 
-var mode='mcq',questions=[],current=0,score=0,streak=0,maxStreak=0,results=[],answered=false,orderSelected=[];
-var matchSelected=null; // {side:'left'|'right', index:int}
-var matchDone=[];
+// ── GAME STATE ────────────────────────────────────────────────────────────────
+var mode='mcq', questions=[], current=0, score=0, streak=0, maxStreak=0;
+var results=[], answered=false, orderSelected=[];
+var matchSelected=null, matchDone=[];
+var currentFillTyped='';
 
+// ── HELPERS ───────────────────────────────────────────────────────────────────
 function shuffle(a){var b=a.slice();for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
 function show(id){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});document.getElementById(id).classList.add('active');}
 function setText(id,t){var el=document.getElementById(id);if(el)el.textContent=t;}
 function setHTML(id,h){var el=document.getElementById(id);if(el)el.innerHTML=h;}
+function escHtml(s){if(!s)return '';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 function sndOk(){try{var a=new AudioContext(),o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);o.frequency.value=523;g.gain.setValueAtTime(.18,a.currentTime);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+.28);o.start();o.stop(a.currentTime+.28);}catch(e){}}
 function sndErr(){try{var a=new AudioContext(),o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);o.frequency.value=220;o.type='sawtooth';g.gain.setValueAtTime(.12,a.currentTime);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+.22);o.start();o.stop(a.currentTime+.22);}catch(e){}}
 function sndFinish(){try{var a=new AudioContext();[523,659,784,1047].forEach(function(f,i){var o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);o.frequency.value=f;g.gain.setValueAtTime(.13,a.currentTime+i*.11);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+i*.11+.17);o.start(a.currentTime+i*.11);o.stop(a.currentTime+i*.11+.17);});}catch(e){}}
 
+// ── ANALYSIS ──────────────────────────────────────────────────────────────────
+function makeChips(arr){
+  return arr.map(function(t){return '<span class="an-chip an-chip-red">'+t+'</span>';}).join('');
+}
+function updateAnalysis(){
+  var weakTopics=[], weakModes=[], weakForms=[];
+
+  var TOPIC_LABEL={like:'Like + V-ing',hobby:'Hobby / Hobbies',possessive:'Tính từ sở hữu / Sở hữu cách'};
+  ['like','hobby','possessive'].forEach(function(t){
+    var s=topicStats[t];if(!s||s.total===0)return;
+    if(Math.round(s.correct/s.total*100)<90) weakTopics.push(TOPIC_LABEL[t]);
+  });
+
+  var MODE_LABEL={mcq:'Chọn đáp án',fill:'Điền vào ô trống',order:'Sắp xếp câu',match:'Nối cột'};
+  ['mcq','fill','order','match'].forEach(function(m){
+    var s=modeStats[m];if(!s||s.total===0)return;
+    if(Math.round(s.correct/s.total*100)<90) weakModes.push(MODE_LABEL[m]);
+  });
+
+  FORM_KEYS.forEach(function(f){
+    var s=formStats[f];if(!s||s.total===0)return;
+    if(Math.round(s.correct/s.total*100)<90) weakForms.push(FORM_LABEL[f]);
+  });
+
+  var html='';
+  html+='<div class="an-section"><b>🏆 Kỷ lục đúng liên tiếp: '+bestStreak+' câu</b></div>';
+
+  html+='<div class="an-section"><div class="an-title">📚 Cần cải thiện cấu trúc:</div>';
+  html+=weakTopics.length?makeChips(weakTopics):'<span class="an-ok">🌟 Tiếp tục phát huy nhé!</span>';
+  html+='</div>';
+
+  html+='<div class="an-section"><div class="an-title">📝 Cần cải thiện dạng bài:</div>';
+  html+=weakModes.length?makeChips(weakModes):'<span class="an-ok">🌟 Tiếp tục phát huy nhé!</span>';
+  html+='</div>';
+
+  html+='<div class="an-section"><div class="an-title">💡 Cần cải thiện dạng câu:</div>';
+  html+=weakForms.length?makeChips(weakForms):'<span class="an-ok">🌟 Tiếp tục phát huy nhé!</span>';
+  html+='</div>';
+
+  document.getElementById('analysis-box').innerHTML=html;
+}
+
+// ── EVENTS ────────────────────────────────────────────────────────────────────
 document.querySelectorAll('.mode-card').forEach(function(c){
   c.addEventListener('click',function(){
     mode=c.getAttribute('data-mode');
@@ -497,17 +520,19 @@ document.querySelectorAll('.mode-card').forEach(function(c){
 document.getElementById('btn-start').addEventListener('click',startGame);
 document.getElementById('btn-restart').addEventListener('click',startGame);
 document.getElementById('btn-next').addEventListener('click',nextQ);
-document.getElementById('btn-menu').addEventListener('click',function(){show('screen-menu');});
+document.getElementById('btn-menu').addEventListener('click',function(){updateAnalysis();show('screen-menu');});
 
+// ── GAME FLOW ─────────────────────────────────────────────────────────────────
 function startGame(){
   var pool=mode==='fill'?FILL_DATA:mode==='order'?ORDER_DATA:mode==='match'?MATCH_DATA:MCQ_DATA;
   questions=shuffle(pool).slice(0,10);
-  current=0;score=0;streak=0;maxStreak=0;results=[];orderSelected=[];matchSelected=null;matchDone=[];
+  current=0;score=0;streak=0;maxStreak=0;results=[];
+  orderSelected=[];matchSelected=null;matchDone=[];currentFillTyped='';
   show('screen-game');renderQ();
 }
 
 function renderQ(){
-  answered=false;orderSelected=[];matchSelected=null;matchDone=[];
+  answered=false;orderSelected=[];matchSelected=null;matchDone=[];currentFillTyped='';
   var q=questions[current];
   setText('q-counter','Câu '+(current+1)+' / '+questions.length);
   document.getElementById('progress-fill').style.width=Math.round(current/questions.length*100)+'%';
@@ -516,41 +541,48 @@ function renderQ(){
   if(streak>=2){sb.style.display='';sb.textContent='🔥 '+streak;}else sb.style.display='none';
   document.getElementById('feedback').className='feedback';
   document.getElementById('btn-next').style.display='none';
-  if(mode==='fill')renderFill(q);
-  else if(mode==='order')renderOrder(q);
-  else if(mode==='match')renderMatch(q);
+  if(mode==='fill') renderFill(q);
+  else if(mode==='order') renderOrder(q);
+  else if(mode==='match') renderMatch(q);
   else renderMCQ(q);
 }
 
-function topicTag(t){
-  return t==='like'
-    ?'<span class="topic-tag tag-like">❤️ Like + V-ing</span><br>'
-    :'<span class="topic-tag tag-hobby">🎨 Hobby</span><br>';
+// build the tag row HTML for a question
+function tagRowHTML(q){
+  var topicCls={like:'tag-like',hobby:'tag-hobby',possessive:'tag-possessive'};
+  var topicLbl={like:'❤️ Like + V-ing',hobby:'🎨 Hobby',possessive:'🔑 Sở hữu'};
+
+  return '<div class="tag-row">' +
+         '<span class="topic-tag '+(topicCls[q.topic]||'tag-like')+'">'+topicLbl[q.topic]+'</span>' +
+         '</div>';
 }
 function hilite(s){return s.replace('_____','<span class="q-blank">_____</span>');}
 
+// MCQ
 function renderMCQ(q){
   var opts=shuffle(q.choices.slice());
   var gc=document.getElementById('game-content');
-  gc.innerHTML=topicTag(q.topic)+'<div class="q-card"><p class="q-text">'+hilite(q.q)+'</p></div><div class="choices" id="cw"></div>';
+  gc.innerHTML=tagRowHTML(q)+'<div class="q-card"><p class="q-text">'+hilite(q.q)+'</p></div><div class="choices" id="cw"></div>';
   opts.forEach(function(opt){
     var btn=document.createElement('button');btn.className='choice-btn';btn.textContent=opt;
-    btn.addEventListener('click',function(){checkMCQ(btn,opt,q.answer,q.explain);});
+    btn.addEventListener('click',function(){checkMCQ(btn,opt,q);});
     document.getElementById('cw').appendChild(btn);
   });
 }
-function checkMCQ(btn,chosen,answer,explain){
+function checkMCQ(btn,chosen,q){
   if(answered)return;answered=true;
   document.querySelectorAll('.choice-btn').forEach(function(b){b.disabled=true;});
-  var ok=chosen===answer;
+  var ok=chosen===q.answer;
   btn.classList.add(ok?'correct':'wrong');
-  if(!ok)document.querySelectorAll('.choice-btn').forEach(function(b){if(b.textContent===answer)b.classList.add('correct');});
-  afterAnswer(ok,answer,explain,q_label(questions[current]));
+  if(!ok) document.querySelectorAll('.choice-btn').forEach(function(b){if(b.textContent===q.answer)b.classList.add('correct');});
+  results.push({q:q.q,answer:q.answer,correct:ok,topic:q.topic,form:q.form,typed:null});
+  afterAnswer(ok,q.answer,q.explain);
 }
 
+// FILL
 function renderFill(q){
   var gc=document.getElementById('game-content');
-  gc.innerHTML=topicTag(q.topic)
+  gc.innerHTML=tagRowHTML(q)
     +'<div class="q-card"><p class="q-text">'+hilite(q.q)+'</p></div>'
     +'<div class="fill-hint">💡 Gợi ý: <strong>'+q.hint+'</strong></div>'
     +'<div class="fill-row"><input class="fill-input" id="fill-in" type="text" placeholder="Điền từ vào đây..." autocomplete="off" autocorrect="off" spellcheck="false"><button class="btn-check" id="btn-chk">Kiểm tra</button></div>';
@@ -562,31 +594,24 @@ function renderFill(q){
 function doFill(q){
   if(answered)return;
   var inp=document.getElementById('fill-in');
-  var val=inp.value.trim().toLowerCase();
+  var val=inp.value.trim();
   if(!val)return;
+  currentFillTyped=val;
   answered=true;inp.disabled=true;
-  var ok;
-  if (Array.isArray(q.answer)) {
-      ok = q.answer.some(function(ans){
-          return val === ans.toLowerCase();
-      });
-  } else {
-      ok = val === q.answer.toLowerCase();
-  }
+  var answers=Array.isArray(q.answer)?q.answer:[q.answer];
+  var ok=answers.some(function(a){return val.toLowerCase()===a.toLowerCase();});
   inp.classList.add(ok?'correct':'wrong');
-  afterAnswer(
-      ok,
-      Array.isArray(q.answer) ? q.answer[0] : q.answer,
-      q.explain,
-      q.q
-  );
+  var canonical=Array.isArray(q.answer)?q.answer[0]:q.answer;
+  results.push({q:q.q,answer:canonical,correct:ok,topic:q.topic,form:q.form,typed:ok?null:val});
+  afterAnswer(ok,canonical,q.explain);
 }
 
+// ORDER
 function renderOrder(q){
   var shuffled=shuffle(q.words.slice());
   var gc=document.getElementById('game-content');
-  gc.innerHTML=topicTag(q.topic)
-    +'<div class="q-card"><p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:2px">Sắp xếp các từ thành câu đúng:</p></div>'
+  gc.innerHTML=tagRowHTML(q)
+    +'<div class="q-card"><p style="font-size:13px;color:var(--color-text-secondary,#555);margin-bottom:2px">Sắp xếp các từ thành câu đúng:</p></div>'
     +'<div class="sentence-lbl">Câu của bạn:</div>'
     +'<div class="sentence-area" id="sa"></div>'
     +'<button class="btn-clear" id="btn-cl">↩ Xóa hết</button>'
@@ -599,9 +624,7 @@ function renderOrder(q){
     var chip=document.createElement('span');chip.className='word-chip';chip.textContent=word;
     chip.addEventListener('click',function(){
       if(answered)return;
-      chip.classList.add('used');
-      orderSelected.push({word:word,el:chip});
-      renderSA();
+      chip.classList.add('used');orderSelected.push({word:word,el:chip});renderSA();
     });
     document.getElementById('wb').appendChild(chip);chipEls.push(chip);
   });
@@ -611,24 +634,13 @@ function renderOrder(q){
   });
   document.getElementById('btn-ok').addEventListener('click',function(){
     if(answered||!orderSelected.length)return;
-    var built = orderSelected.map(function(o){
-        return o.word;
-    }).join(' ')
-     .replace(/[‘’]/g,"'")
-     .trim();
-
-    answered = true;
-
-    var answers = Array.isArray(q.answer)
-      ? q.answer
-      : [q.answer];
-    
-    answers = answers.map(function(a){
-      return a.replace(/[‘’]/g,"'").trim();
-    });
-    
-    var ok = answers.includes(built);
-    afterAnswer(ok,q.answer,q.topic==='like'?'Cấu trúc: S + like(s) + V-ing':'Cấu trúc: S\'s hobby/hobbies + is/are + V-ing',q.words.join(' '));
+    var built=orderSelected.map(function(o){return o.word;}).join(' ').replace(/['']/g,"'").trim();
+    answered=true;
+    var answers=Array.isArray(q.answer)?q.answer:[q.answer];
+    answers=answers.map(function(a){return a.replace(/['']/g,"'").trim();});
+    var ok=answers.indexOf(built)!==-1;
+    results.push({q:q.words.join(' '),answer:Array.isArray(q.answer)?q.answer[0]:q.answer,correct:ok,topic:q.topic,form:q.form,typed:null});
+    afterAnswer(ok,q.answer,q.topic==='like'?'Cấu trúc: S + like(s) + V-ing':"Cấu trúc: S's hobby/hobbies + is/are + V-ing");
   });
 }
 function renderSA(){
@@ -644,107 +656,72 @@ function renderSA(){
   });
 }
 
-// MATCH mode: nối cột
+// MATCH
 function renderMatch(q){
   var leftItems=shuffle(q.pairs.slice());
   var rightItems=shuffle(q.pairs.slice());
   var gc=document.getElementById('game-content');
-  gc.innerHTML=topicTag(q.topic)
-    +'<div class="q-card"><p style="font-size:13px;color:var(--color-text-secondary)">Nối cụm bên trái với cụm bên phải cho đúng:</p></div>'
+  gc.innerHTML=tagRowHTML(q)
+    +'<div class="q-card"><p style="font-size:13px;color:var(--color-text-secondary,#555)">Nối cụm bên trái với cụm bên phải cho đúng:</p></div>'
     +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px"><div class="match-col-lbl">Trái</div><div class="match-col-lbl">Phải</div></div>'
     +'<div id="match-area"></div>'
     +'<div class="match-connect" id="match-status">Bấm một ô bên trái, rồi ô tương ứng bên phải.</div>';
-
   matchDone=[];matchSelected=null;
   var lEls=[],rEls=[];
   var area=document.getElementById('match-area');
-
   for(var i=0;i<leftItems.length;i++){
     var row=document.createElement('div');row.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px';
-
-    var lBtn=document.createElement('button');lBtn.className='match-item';lBtn.textContent=leftItems[i].left;lBtn.dataset.idx=i;lBtn.dataset.side='left';
-    var rBtn=document.createElement('button');rBtn.className='match-item';rBtn.textContent=rightItems[i].right;rBtn.dataset.idx=i;rBtn.dataset.side='right';
-
+    var lBtn=document.createElement('button');lBtn.className='match-item';lBtn.textContent=leftItems[i].left;
+    var rBtn=document.createElement('button');rBtn.className='match-item';rBtn.textContent=rightItems[i].right;
     (function(li,ri,lB,rB){
       lB.addEventListener('click',function(){onMatchClick('left',li,lB,leftItems,rightItems,lEls,rEls,q);});
       rB.addEventListener('click',function(){onMatchClick('right',ri,rB,leftItems,rightItems,lEls,rEls,q);});
     })(i,i,lBtn,rBtn);
-
     row.appendChild(lBtn);row.appendChild(rBtn);
-    area.appendChild(row);
-    lEls.push(lBtn);rEls.push(rBtn);
+    area.appendChild(row);lEls.push(lBtn);rEls.push(rBtn);
   }
 }
-
 function onMatchClick(side,idx,btn,leftItems,rightItems,lEls,rEls,q){
   if(answered)return;
   if(btn.classList.contains('used-m')||btn.classList.contains('correct'))return;
-
-  if(!matchSelected){
-    // first click
-    if(matchSelected&&matchSelected.btn!==btn){matchSelected.btn.classList.remove('selected-m');}
-    matchSelected={side:side,idx:idx,btn:btn};
-    btn.classList.add('selected-m');
-    return;
-  }
-
-  // second click — must be opposite side
-  if(matchSelected.side===side){
-    matchSelected.btn.classList.remove('selected-m');
-    matchSelected={side:side,idx:idx,btn:btn};
-    btn.classList.add('selected-m');
-    return;
-  }
-
-  // evaluate pair
+  if(!matchSelected){matchSelected={side:side,idx:idx,btn:btn};btn.classList.add('selected-m');return;}
+  if(matchSelected.side===side){matchSelected.btn.classList.remove('selected-m');matchSelected={side:side,idx:idx,btn:btn};btn.classList.add('selected-m');return;}
   var lIdx=side==='right'?matchSelected.idx:idx;
   var rIdx=side==='right'?idx:matchSelected.idx;
   var lText=leftItems[lIdx].left;
   var rText=rightItems[rIdx].right;
-
-  // find the correct right for this left
   var correctRight='';
   for(var p=0;p<q.pairs.length;p++){if(q.pairs[p].left===lText){correctRight=q.pairs[p].right;break;}}
-
   var lBtn=side==='right'?matchSelected.btn:btn;
   var rBtn=side==='right'?btn:matchSelected.btn;
-
-  matchSelected.btn.classList.remove('selected-m');
-  matchSelected=null;
-
+  matchSelected.btn.classList.remove('selected-m');matchSelected=null;
   if(rText===correctRight){
     lBtn.classList.add('correct');rBtn.classList.add('correct');
     lBtn.classList.add('used-m');rBtn.classList.add('used-m');
-    matchDone.push(lText);
-    sndOk();
+    matchDone.push(lText);sndOk();
     if(matchDone.length===q.pairs.length){
-      // all matched!
       score+=10;streak++;if(streak>maxStreak)maxStreak=streak;
       setText('score-disp','⭐ '+score);
       var sb=document.getElementById('streak-disp');
       if(streak>=2){sb.style.display='';sb.textContent='🔥 '+streak;}else sb.style.display='none';
-      var fb=document.getElementById('feedback');
-      fb.className='feedback show ok';
+      var fb=document.getElementById('feedback');fb.className='feedback show ok';
       setText('fb-title','✓ Nối hết rồi! Giỏi lắm! 🎉');
       setHTML('fb-body','Bạn đã nối đúng tất cả '+q.pairs.length+' cặp!');
-      results.push({q:'[Nối cột] '+q.pairs.map(function(p){return p.left;}).join(', '),answer:'Tất cả đúng',correct:true});
-      document.getElementById('btn-next').style.display='block';
-      answered=true;
+      results.push({q:'[Nối cột] '+q.pairs.map(function(p){return p.left;}).join(', '),answer:'Tất cả đúng',correct:true,topic:q.topic,form:q.form,typed:null});
+      document.getElementById('btn-next').style.display='block';answered=true;
     } else {
       setText('match-status',matchDone.length+'/'+q.pairs.length+' cặp đúng rồi, tiếp tục!');
     }
   } else {
     lBtn.classList.add('wrong-flash');rBtn.classList.add('wrong-flash');
     setTimeout(function(){lBtn.classList.remove('wrong-flash');rBtn.classList.remove('wrong-flash');},600);
-    // penalise streak
-    streak=0;
-    var sb=document.getElementById('streak-disp');sb.style.display='none';
-    setText('match-status','Chưa đúng — thử lại nhé!');
-    sndErr();
+    streak=0;document.getElementById('streak-disp').style.display='none';
+    setText('match-status','Chưa đúng — thử lại nhé!');sndErr();
   }
 }
 
-function afterAnswer(ok,answer,explain,label){
+// ── FEEDBACK ──────────────────────────────────────────────────────────────────
+function afterAnswer(ok,answer,explain){
   if(ok){score+=10;streak++;if(streak>maxStreak)maxStreak=streak;sndOk();}
   else{streak=0;sndErr();}
   setText('score-disp','⭐ '+score);
@@ -753,38 +730,59 @@ function afterAnswer(ok,answer,explain,label){
   var fb=document.getElementById('feedback');
   fb.className='feedback show '+(ok?'ok':'err');
   setText('fb-title',ok?'✓ Đúng rồi! Giỏi lắm! 🎉':'✗ Chưa đúng');
-  var answerText;
-  if (Array.isArray(answer)) {
-      answerText = '<b>' + answer.join('</b> hoặc <b>') + '</b>';
-  } else {
-      answerText = '<b>' + answer + '</b>';
-  }
-
-  setHTML(
-    'fb-body',
-    (ok
-      ? 'Đáp án: ' + answerText + ' — '
-      : 'Đáp án đúng: ' + answerText + '<br>')
-    + explain
-  );
-  results.push({q:label||'',answer:answer,correct:ok});
+  var ansText=Array.isArray(answer)?'<b>'+answer.join('</b> hoặc <b>')+'</b>':'<b>'+answer+'</b>';
+  setHTML('fb-body',(ok?'Đáp án: '+ansText+' — ':'Đáp án đúng: '+ansText+'<br>')+explain);
   document.getElementById('btn-next').style.display='block';
 }
 
-function q_label(q){return q.q||(q.words||[]).join(' ');}
 function nextQ(){current++;if(current>=questions.length)showResult();else renderQ();}
 
+// ── RESULT ────────────────────────────────────────────────────────────────────
 function showResult(){
+  if(maxStreak>bestStreak){bestStreak=maxStreak;localStorage.setItem('bestStreak',bestStreak);}
+
+  // topic stats
+  var ts={like:{c:0,t:0},hobby:{c:0,t:0},possessive:{c:0,t:0}};
+  results.forEach(function(r){if(!r.topic||!ts[r.topic])return;ts[r.topic].t++;if(r.correct)ts[r.topic].c++;});
+  ['like','hobby','possessive'].forEach(function(t){var s=ts[t];if(s.t===0)return;topicStats[t].correct+=s.c;topicStats[t].total+=s.t;});
+  localStorage.setItem('topicStats',JSON.stringify(topicStats));
+
+  // mode stats
+  var modeCorrect=results.filter(function(r){return r.correct;}).length;
+  if(modeStats[mode]){modeStats[mode].correct+=modeCorrect;modeStats[mode].total+=results.length;}
+  localStorage.setItem('modeStats',JSON.stringify(modeStats));
+
+  // form stats
+  var fs={};FORM_KEYS.forEach(function(f){fs[f]={c:0,t:0};});
+  results.forEach(function(r){if(!r.form||!fs[r.form])return;fs[r.form].t++;if(r.correct)fs[r.form].c++;});
+  FORM_KEYS.forEach(function(f){var s=fs[f];if(s.t===0)return;formStats[f].correct+=s.c;formStats[f].total+=s.t;});
+  localStorage.setItem('formStats',JSON.stringify(formStats));
+
   sndFinish();show('screen-result');
   setText('final-score',score);
-  var ok=results.filter(function(r){return r.correct;}).length;
-  setText('stat-correct',ok);setText('stat-wrong',results.length-ok);setText('stat-streak',maxStreak);
+  var okCount=results.filter(function(r){return r.correct;}).length;
+  setText('stat-correct',okCount);setText('stat-wrong',results.length-okCount);setText('stat-streak',maxStreak);
+
   var msgs=[[90,'🏆 Xuất sắc!','Bạn nắm chắc cả hai cấu trúc rồi!'],[70,'🌟 Làm tốt lắm!','Ôn thêm một chút là hoàn hảo!'],[50,'👍 Cố lên nào!','Thử lại để đạt điểm cao hơn nhé!'],[0,'📖 Cần ôn thêm!','Đọc lại bảng gợi nhớ và thử lại nhé!']];
   for(var i=0;i<msgs.length;i++){if(score>=msgs[i][0]){setText('result-msg',msgs[i][1]);setText('result-sub',msgs[i][2]);break;}}
+
   var html='';
   results.forEach(function(r){
-    html+='<div class="review-item"><div class="ri-icon '+(r.correct?'ri-ok':'ri-err')+'">'+(r.correct?'✓':'✗')+'</div><div class="ri-text"><div class="rq">'+r.q+'</div><div class="ra">'+(r.correct?'✓ '+r.answer:'Đúng: '+r.answer)+'</div></div></div>';
+    var topicLbl={like:'Like',hobby:'Hobby',possessive:'Sở hữu'};
+    var tags='';
+    if(r.topic) tags+='<span class="form-tag" style="font-size:10px;padding:2px 7px;margin-right:3px;background:var(--teal-pale);color:#085041">'+( topicLbl[r.topic]||r.topic)+'</span>';
+    var detail='';
+    if(r.correct){detail='✓ '+escHtml(r.answer);}
+    else if(mode==='fill'&&r.typed){detail='Bạn làm: <b>'+escHtml(r.typed)+'</b><br>Đáp án đúng: <b>'+escHtml(r.answer)+'</b>';}
+    else{detail='Đáp án đúng: <b>'+escHtml(r.answer)+'</b>';}
+    html+='<div class="review-item"><div class="ri-icon '+(r.correct?'ri-ok':'ri-err')+'">'+(r.correct?'✓':'✗')+'</div>'
+      +'<div class="ri-text">'+(tags?'<div style="margin-bottom:3px">'+tags+'</div>':'')
+      +'<div class="rq">'+escHtml(r.q)+'</div><div class="ra">'+detail+'</div></div></div>';
   });
   setHTML('review-list',html);
+  updateAnalysis();
 }
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+updateAnalysis();
 </script>
